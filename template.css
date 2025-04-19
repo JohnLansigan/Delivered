@@ -1,0 +1,78 @@
+*
+{
+    margin: 0;
+    font-family: Glacial Indifference;
+}
+
+body
+{
+    padding: 1%;
+}
+
+#nav-container
+{
+    height: 5vh;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #8e8e93;
+    border-radius: 15px;
+    margin-bottom: 1%;
+}
+
+#left-nav
+{
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    a
+    {
+        height: 100%;
+    }
+}
+
+#logo, #profile
+{
+    height: 60%;
+    margin: 0 10px 0 10px;
+}
+
+#home, #about, #terms, #create
+{
+    height: 100%;
+    width: 75px;
+    font-size: large;
+    background-color: #8e8e93;
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+
+#home:hover, #about:hover, #terms:hover, #create:hover, #user:hover
+{
+    background-color: #2791f5 ;
+    color: white;
+}
+
+#right-nav
+{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#user
+{
+    height: 100%;
+    width: auto;
+    font-size: large;
+    background-color: #8e8e93;
+    color: white;
+    border: none;
+    transition: 0.3s;
+    border-radius: 0 15px 15px 0;
+}
+
+
+
