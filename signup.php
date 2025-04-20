@@ -31,10 +31,8 @@
         </div>
 
         <div id='right-nav'>
-
-            <img id='profile' src="profile.png" alt="profile.png">
-
-            <button id='user'>Login</button>
+            
+            <a href="signup.php"><img src="profile.png" id='profile' alt="profile.png"></a>
 
         </div>
 
@@ -42,42 +40,53 @@
 
     <form id='form-container'>
 
-        <h1>Sign Up</h1>
+        <h1>Sign up</h1>
 
-        <fieldset>
-            
-            <legend>Account Details</legend>
+        <div>
+            <div>
+                <label for="fname">First Name <strong>*</strong></label>
+                <label for="lname">Last Name <strong>*</strong></label>
+            </div>
 
-            <label for="email">Email</label>
-            <input id='email' type="text"> 
+            <div>
+                <input id='fname' type="text" maxlength=50> 
+                <input id='lname' type="text" maxlength=50> 
+            </div>
+        </div>
 
-            <label for="username">Username</label>
-            <input id='username' type="text"> 
+        <div>
+            <label for="address">Address <strong>*</strong></label>
+            <input id='address' type="text" maxlength=250> 
+        </div>
 
-            <label for="password">Password</label>
-            <input id='password' type="text"> 
+        <div>
+            <label for="email">Email <strong>*</strong></label>
+            <input id='email' type="text" maxlength=100> 
+        </div>
 
-        </fieldset>
-        
-        <fieldset>
-            
-            <legend>Personal Information</legend>
+        <div>
+            <label for="username">Username <strong>*</strong></label>
+            <input id='username' type="text" maxlength=50> 
+        </div>
 
-            <label for="fname">First Name</label>
-            <input id='fname' type="text"> 
+        <div>
+            <label for="password">Password <strong>*</strong></label>
+            <input id='password' type="password" maxlength=50> 
+        </div>
 
-            <label for="lname">Last Name</label>
-            <input id='lname' type="text"> 
+        <div>
+            <label for="password">Re-enter Password <strong>*</strong></label>
+            <input id='password' type="password" maxlength=50> 
+        </div>
 
-            <label for="email">Email</label>
-            <input id='email' type="text"> 
-
-            <label for="address">Address</label>
-            <input id='address' type="text"> 
-
-        </fieldset>
+        <div>
+            <input type="checkbox" id="accept">
+            <label for="accept">By signing up you agree to our <a href="terms.php">Terms and conditions</a></label>
+        </div>
 
         <button>Sign Up</button>
+
+        <p>Already have an account? <a href="login.php">Log In</a></p>
         
     </form>
    

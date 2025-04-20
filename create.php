@@ -31,10 +31,8 @@
         </div>
 
         <div id='right-nav'>
-
-            <img id='profile' src="profile.png" alt="profile.png">
-
-            <a href="signup.php"><button id='user'>Login</button></a>
+            
+            <a href="signup.php"><img src="profile.png" id='profile' alt="profile.png"></a>
 
         </div>
 

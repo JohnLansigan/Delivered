@@ -7,6 +7,11 @@
 body
 {
     padding: 1%;
+    background-image: url("background.jpg");
+    background-repeat: repeat;
+    background-size: 75px;
+    display: flex;
+    flex-direction: column;
 }
 
 #nav-container
@@ -32,7 +37,7 @@ body
     }
 }
 
-#logo, #profile
+#logo
 {
     height: 60%;
     margin: 0 10px 0 10px;
@@ -60,6 +65,22 @@ body
     height: 100%;
     display: flex;
     align-items: center;
+
+    a
+    {
+        height: 100%;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    #profile
+    {
+        height: 70%;
+    }
+
 }
 
 #user
