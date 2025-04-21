@@ -38,7 +38,7 @@
 
     </div>
 
-    <form id='form-container' action="process_signup.php" method="post">
+    <form id='form-container' action="signup_process.php" method="post">
         <h1>Sign up</h1>
 
         <div>

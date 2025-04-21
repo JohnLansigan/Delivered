@@ -9,7 +9,7 @@ body
     padding: 1%;
     background-image: url("background.jpg");
     background-repeat: repeat;
-    background-size: 75px;
+    background-size: 100px;
     display: flex;
     flex-direction: column;
 }
