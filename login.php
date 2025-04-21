@@ -9,10 +9,10 @@
 
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="template.css">
-    <link rel="stylesheet" href="create.css">
+    <link rel="stylesheet" href="signup.css">
 
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -31,12 +31,31 @@
         </div>
 
         <div id='right-nav'>
-            
+
             <a href="signup.php"><img src="profile.png" id='profile' alt="profile.png"></a>
 
         </div>
 
     </div>
+
+    <form id='form-container' action="process_login.php" method="post">
+        <h1>Log In</h1>
+
+        <div>
+            <label for="useremail">Email or Username</label>
+            <input id='useremail' type="text" maxlength=50 name="username">
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input id='password' type="password" maxlength=50 name="password">
+        </div>
+
+        <button type="submit">Login</button>
+
+        <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+
+    </form>
 
 </body>
 

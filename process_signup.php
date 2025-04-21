@@ -1,11 +1,12 @@
 <?php
-session_name("deliveredSession");
+session_name("session_delivered");
 session_start();
 
-$servername = "localhost"; 
+//localhost OR 127.0.0.1
+$servername = "127.0.0.1"; 
 $username = "root"; 
 $password = ""; 
-$dbname = "delivered_users";
+$dbname = "db_delivered";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -31,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO users (fname, lname, address, email, username, password)
+        $sql = "INSERT INTO tbl_users (fname, lname, address, email, username, password)
                 VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
