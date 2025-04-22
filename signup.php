@@ -48,8 +48,8 @@
             </div>
 
             <div>
-                <input id='fname' type="text" maxlength=50 name="fname">
-                <input id='lname' type="text" maxlength=50 name="lname">
+                <input id='fname' type="text" maxlength=50 name="fname" require>
+                <input id='lname' type="text" maxlength=50 name="lname" require>
             </div>
         </div>
 

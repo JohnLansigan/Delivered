@@ -2,7 +2,7 @@
 session_name("session_delivered");
 session_start();
 
-//localhost OR 127.0.0.1
+//localhost OR 127.0.0.1 OR localhost:3307
 $servername = "127.0.0.1"; 
 $username = "root"; 
 $password = ""; 
