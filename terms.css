@@ -2,3 +2,22 @@
 {
     background-color: #63636b;
 }
+
+.main-container{
+    background-color:#ecece1;
+    justify-content: center;
+    align-items: center;
+    width: 75vw;
+    padding: 3em;
+    margin:0 auto;
+    border-radius: 15px;
+
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+ol,ul,p{
+    text-align: justify;
+}
