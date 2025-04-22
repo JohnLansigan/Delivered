@@ -19,9 +19,9 @@
 
     <div id='nav-container'>
 
-        <div id='left-nav'>
+        <img id='logo' src="icon.png" alt="logo.png">
 
-            <img id='logo' src="icon.png" alt="logo.png">
+        <div id='middle-nav'>
 
             <a href="index.php"><button id='home'>Home</button></a>
             <a href="about.php"><button id='about'>About</button></a>
@@ -29,18 +29,33 @@
             <a href="create.php"><button id='create'>Create</button></a>
 
         </div>
-
-        <div id='right-nav'>
             
-            <a href="signup.php"><img src="profile.png" id='profile' alt="profile.png"></a>
-
-        </div>
+        <a href="login.php"><button id='login'>Login</button></a>
 
     </div>
 
-    <div id="message-container">
+    <div id='footer-container'>
 
+        <div><h2>[Delivered]</h2></div>
 
+        <div>
+
+        <h3>Links</h3>
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="terms.php">Terms</a>
+        <a href="create.php">Create</a>
+
+        </div>
+
+        <div>
+
+            <h3>Project</h3>
+            <p>News</p>
+            <p>Partners</p>
+            <p>Contact Us</p>
+            
+        </div>
 
     </div>
     

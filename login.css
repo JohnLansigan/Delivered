@@ -85,14 +85,3 @@ a
     text-decoration: none;
     color: #2791f5;
 }
-
-#accept
-{
-    height: 15px;
-    width: auto;
-}
-
-#accept:hover
-{
-    cursor: pointer;
-}

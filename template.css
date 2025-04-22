@@ -6,7 +6,6 @@
 
 body
 {
-    padding: 1%;
     background-image: url("background.jpg");
     background-repeat: repeat;
     background-size: 100px;
@@ -20,21 +19,18 @@ body
     width: auto;
     display: flex;
     justify-content: space-between;
-    background-color: #8e8e93;
-    border-radius: 15px;
+    align-items: center;
+    background-color: black;
     margin-bottom: 1%;
 }
 
-#left-nav
+#middle-nav
 {
     height: 100%;
     display: flex;
     align-items: center;
 
-    a
-    {
-        height: 100%;
-    }
+    
 }
 
 #logo
@@ -43,44 +39,26 @@ body
     margin: 0 10px 0 10px;
 }
 
-#home, #about, #terms, #create
+#home, #about, #terms, #create, #login
 {
     height: 100%;
     width: 75px;
     font-size: large;
-    background-color: #8e8e93;
+    background-color: black;
     color: white;
     border: none;
     transition: 0.3s;
 }
 
-#home:hover, #about:hover, #terms:hover, #create:hover, #user:hover
+#home:hover, #about:hover, #terms:hover, #create:hover, #user:hover, #login:hover
 {
-    background-color: #2791f5 ;
+    background-color: #2791f5;
     color: white;
 }
 
-#right-nav
+a
 {
     height: 100%;
-    display: flex;
-    align-items: center;
-
-    a
-    {
-        height: 100%;
-        width: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s;
-    }
-
-    #profile
-    {
-        height: 70%;
-    }
-
 }
 
 #user
@@ -95,5 +73,28 @@ body
     border-radius: 0 15px 15px 0;
 }
 
+#footer-container
+{
+    padding: 1%;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    margin-bottom: 1%;
 
+    div
+    {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
 
+        a
+        {
+            text-decoration: none;
+
+            color: white;
+        }
+    }
+}
