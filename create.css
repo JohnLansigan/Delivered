@@ -5,7 +5,125 @@
 
 #create-container
 {
-    background-color: #8e8e93;
+    background-color: white;
     height: 100%;
     width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#top-container
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    border-radius: 15px 15px 0 0;
+    padding: 1%;
+}
+
+#cancel
+{
+    align-self: right;
+    color: #2791f5;
+    border: none;
+    background: none;
+    font-size: large;
+    transition: 0.3s;
+
+}
+
+#cancel:hover
+{
+    scale: 1.1;
+}
+
+#recipient-container
+{
+    display: flex;
+    padding: 1%;
+}
+
+h2
+{
+    font-weight: normal;
+}
+
+#recipient
+{
+    border: none;
+    color: #2791f5;
+    font-size: x-large;
+    outline: none;
+}
+
+#message-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    align-items: end;
+
+    h2
+    {
+        color: #63636b;
+    }
+}
+
+hr
+{
+    height: 1px;
+    background-color: #63636b;
+    border: none;
+}
+
+#message
+{
+    white-space: pre-wrap;
+    background-color: #2791f5;
+    border-radius: 15px 15px 0 15px;
+    padding: 1%;
+    outline: none;
+    max-width: 60%;
+    color: white;
+    font-size: large;
+}
+
+#delivered
+{
+    transition: .3s;
+}
+
+#bottom-container
+{
+    display: flex;
+    padding: 1%;
+}
+
+#prompt
+{
+    width: 100%;
+    border: 1px #63636b solid;
+    padding: .5%;
+    font-size: large;
+    border-radius: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#send
+{
+    background-color: #2791f5;
+    border: none;
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    font-size: large;
+    color: white;
+    transition: 0.3s;
+}
+
+#send:hover
+{
+    background-color: #1b6db9;
 }

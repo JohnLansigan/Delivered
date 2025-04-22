@@ -40,9 +40,59 @@
 
     <div id='create-container'>
 
-        dasda
+        <div id='top-container'>
+
+            <h1>New Message</h1>
+            
+            <button id='cancel' onmouseover="cancelOver(event)" onmouseout="cancelOut(event)">Cancel</button>
+
+        </div>
+
+        <hr>
+
+        <div id='recipient-container'>
+
+            <h2>To: </h2>
+
+            <input id='recipient' type="text" placeholder='Recipient'>
+
+        </div>
+
+        <hr>
+
+        <div id='message-container'>
+
+            <div id='message' contenteditable="true">Type message here</div>
+            <h2 id='delivered'>Delivered</h2>
+
+        </div>
+
+        <div id='bottom-container'>
+
+            <div id='prompt'>
+                Send Message?
+                <button id='send'>↑</button>
+            </div>     
+
+        </div>
 
     </div>
+
+    <script>
+
+        function cancelOver(event) 
+        {
+            document.getElementById('delivered').innerHTML = "Not Delivered";
+            document.getElementById('delivered').style.color = "red";
+        }
+
+        function cancelOut(event) 
+        {
+            document.getElementById('delivered').innerHTML = "Delivered";
+            document.getElementById('delivered').style.color = "#63636b";
+        }
+
+    </script>
     
 </body>
 
