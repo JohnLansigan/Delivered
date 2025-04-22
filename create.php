@@ -30,7 +30,7 @@
 
         </div>
             
-        <a href="login.php"><button id='login'>Login</button></a>
+        <a href="login.php"><button id='login'><img src="profile.png" alt="profile.png">Login</button></a>
 
     </div>
 
@@ -56,6 +56,12 @@
 
         <hr>
 
+        <div id='reply-container'>
+
+            <div>What's on your mind?</div>
+
+        </div>
+
         <div id='message-container'>
 
             <div id='message' contenteditable="true">Type message here</div>
@@ -70,6 +76,60 @@
                 <button id='send'>↑</button>
             </div>     
 
+        </div>
+
+    </div>
+
+    <div id='footer-container'>
+
+        <div>
+            
+            <h2>[Delivered]</h2>
+            <p>a passion project.</p>
+            <br>
+            <br>
+            <p>© 2025 [Delivered] All rights reserved</p>
+    
+        </div>
+
+        <div>
+
+            <h3>Links</h3>
+            <a href="index.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="terms.php">Terms</a>
+            <a href="create.php">Create</a>
+
+        </div>
+
+        <div>
+
+            <h3>The Project</h3>
+            <p>News</p>
+            <p>Partners</p>
+            <p>Contact Us</p>
+            <p>Contact Us</p>
+            
+        </div>
+
+        <div>
+
+            <h3>Services</h3>
+            <p>Feedback</p>
+            <p>Report Bugs</p>
+            <p>Download</p>
+            <p>Get Help</p>
+            
+        </div>
+
+        <div>
+
+            <h3>Socials</h3>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>TikTok</p>
+            
         </div>
 
     </div>

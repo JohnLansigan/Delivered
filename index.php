@@ -30,30 +30,72 @@
 
         </div>
             
-        <a href="login.php"><button id='login'>Login</button></a>
+        <a href="login.php"><button id='login'><img src="profile.png" alt="profile.png">Login</button></a>
 
     </div>
 
+    <div id='intro-container'>
+
+        
+        <h1>LET YOUR MESSAGE<br>BE DELIVERED</h1>
+
+        <h2>Voice out the thoughts you could never get out.<br>One message at a time.</h2>
+
+        <a href="create.php"><button><h2>Deliver a Message</h2></button></a>
+
+    </div>
+
+    <img src="woman.png" alt="woman.png">
+
     <div id='footer-container'>
 
-        <div><h2>[Delivered]</h2></div>
+        <div>
+            
+            <h2>[Delivered]</h2>
+            <p>a passion project.</p>
+            <br>
+            <br>
+            <p>© 2025 [Delivered] All rights reserved</p>
+    
+        </div>
 
         <div>
 
-        <h3>Links</h3>
-        <a href="index.php">Home</a>
-        <a href="about.php">About</a>
-        <a href="terms.php">Terms</a>
-        <a href="create.php">Create</a>
+            <h3>Links</h3>
+            <a href="index.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="terms.php">Terms</a>
+            <a href="create.php">Create</a>
 
         </div>
 
         <div>
 
-            <h3>Project</h3>
+            <h3>The Project</h3>
             <p>News</p>
             <p>Partners</p>
             <p>Contact Us</p>
+            <p>Contact Us</p>
+            
+        </div>
+
+        <div>
+
+            <h3>Services</h3>
+            <p>Feedback</p>
+            <p>Report Bugs</p>
+            <p>Download</p>
+            <p>Get Help</p>
+            
+        </div>
+
+        <div>
+
+            <h3>Socials</h3>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>TikTok</p>
             
         </div>
 

@@ -6,11 +6,11 @@
 
 body
 {
-    background-image: url("background.jpg");
-    background-repeat: repeat;
-    background-size: 100px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
 }
 
 #nav-container
@@ -21,7 +21,8 @@ body
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    margin-bottom: 1%;
+    position: sticky;
+    top: 0;
 }
 
 #middle-nav
@@ -48,6 +49,25 @@ body
     color: white;
     border: none;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    img
+    {
+        height: 60%;
+    }
+}
+
+#login
+{
+    width: 100px;
+    text-decoration: none;
+}
+
+a
+{
+    text-decoration: none;
 }
 
 #home:hover, #about:hover, #terms:hover, #create:hover, #user:hover, #login:hover
@@ -82,7 +102,6 @@ a
     justify-content: space-around;
     background-color: black;
     color: white;
-    margin-bottom: 1%;
 
     div
     {
@@ -95,6 +114,11 @@ a
             text-decoration: none;
 
             color: white;
+        }
+
+        h2
+        {
+            font-weight: normal;
         }
     }
 }

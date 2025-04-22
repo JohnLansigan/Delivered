@@ -57,6 +57,25 @@ h2
     outline: none;
 }
 
+#reply-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    
+    div
+    {
+        padding: 1%;
+        background-color: #63636b;
+        color: white;
+        white-space: pre-wrap;
+        font-size: large;
+        border-radius: 15px 15px 15px 0;
+        display: inline-block;
+        width: 165px
+    }
+}
+
 #message-container
 {
     display: flex;

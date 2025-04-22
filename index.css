@@ -3,3 +3,44 @@
     border-bottom: 4px #2791f5 solid;
     color: #2791f5;
 }
+
+body
+{
+    height: auto;
+}
+
+#intro-container
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    justify-content: flex-end;
+    padding: 2%;
+    
+    h1
+    {
+        font-size: 5vw;
+    }
+
+    h2
+    {
+        font-weight: normal;
+    }
+
+    button
+    {
+        color: white;
+        background-color: #8e8e93;
+        border: none;
+        padding: 1%;
+        border-radius: 15px;
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    button:hover
+    {
+        background-color: #2791f5;
+    }
+}
