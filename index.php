@@ -19,7 +19,7 @@
 
     <div id='nav-container'>
 
-        <img id='logo' src="icon.png" alt="logo.png">
+        <img id='logo' src="DeliveredLogo.png" alt="logo.png">
 
         <div id='middle-nav'>
 

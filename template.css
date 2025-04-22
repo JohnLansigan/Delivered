@@ -15,7 +15,7 @@ body
 
 #nav-container
 {
-    height: 5vh;
+    height: 8vh;
     width: auto;
     display: flex;
     justify-content: space-between;
@@ -61,7 +61,7 @@ body
 
 #login
 {
-    width: 100px;
+    width: 7vw;
     text-decoration: none;
 }
 
