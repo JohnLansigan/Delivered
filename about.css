@@ -3,82 +3,12 @@
 {
     background-color: #63636b;
 }
+
 body
 {
     background-color: #4E73FF;
     margin: 0;
-}
-#nav-container
-{
-    height: 9vh;
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    background-color: #4E73FF;
-    
-    margin-bottom: 1%;
-}
-
-#left-nav
-{
-    height: 100%;
-    display: flex;
-    align-items: center;
-
-
-}
-#left-nav a
-{
-    height: 100%;
-}
-
-#logo
-{
-    height: 60%;
-    margin: 0 10px 0 10px;
-}
-
-#home, #about, #terms, #create
-{
-    height: 100%;
-    width: 75px;
-    font-size: large;
-    font-family: sans-serif;
-    background-color: #4E73FF;
-    color: rgb(0, 0, 0);
-    border: none;
-    transition: 0.3s;
-}
-
-#home:hover, #about:hover, #terms:hover, #create:hover, #user:hover
-{
-    background-color: #2791f5 ;
-    color: white;
-}
-
-#right-nav
-{
-    height: 100%;
-    width: 50vh;
-    display: flex;
-    align-items: center;
-    margin-right: 30vh;
-
-}
-#right-nav a
-{
-    height: 100%;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-
-}
-#right-nav #profile
-{
-    height: 70%;
-}
+}   
 
 #desc
 {
