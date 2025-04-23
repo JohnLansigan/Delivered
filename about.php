@@ -49,7 +49,7 @@
 
     <div id="panel1">
         <div id="aboutUsPic">
-            image
+        <img id='ourPic' src="placeholder.jpg" alt="placeholder.jpg" height = "300px" width = "300px">
         </div>
         <div id="aboutUsText">
         <h3>Hello! We are a group of students from the UST College of Information and Computing Sciences. We created this project in partial fulfillment of our requirements for our school. We also wanted to create a freedom wall-like website where users can freely express themselves or lift their feelings by anonymously posting a message to a person they can’t directly send the message to.</h3>
