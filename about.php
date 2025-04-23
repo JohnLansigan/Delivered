@@ -33,20 +33,27 @@
         <a href="login.php"><button id='login'><img src="profile.png" alt="profile.png">Login</button></a>
 
     </div>
+    
 
 
     <div id="desc">
         <p>
-            <h1>LET THE WHISPERS<br>
-            <center>BE DELIVERED.</center></h1>
+            <h1><center>Welcome to  <br>
+            [DELIVERED]</center></h1><br><br><br><br>
             
-            Deliver the words you were 
-            never meant to say. One note at a time.
+            <h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
         </p>
-    </div>
+    </div><br><br><br><br><br>
+
+    <center><h2>About Us</h2></center>
 
     <div id="panel1">
-        
+        <div id="aboutUsPic">
+            image
+        </div>
+        <div id="aboutUsText">
+        <h3>Hello! We are a group of students from the UST College of Information and Computing Sciences. We created this project in partial fulfillment of our requirements for our school. We also wanted to create a freedom wall-like website where users can freely express themselves or lift their feelings by anonymously posting a message to a person they can’t directly send the message to.</h3>
+        </div>
     </div>
     
     <div id='footer-container'>
