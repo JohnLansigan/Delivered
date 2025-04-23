@@ -43,9 +43,9 @@
 
         <a href="create.php"><button><h2>Deliver a Message</h2></button></a>
 
-    </div>
+        <img id='woman' src="woman.png" alt="woman.png">
 
-    <img src="woman.png" alt="woman.png">
+    </div>
 
     <div id='footer-container'>
 

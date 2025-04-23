@@ -34,15 +34,16 @@ body
 
 #logo
 {
-    height: 60%;
+    height: auto;
+    width: 6vw;
     margin: 0 10px 0 10px;
 }
 
 #home, #about, #terms, #create, #login
 {
     height: 100%;
-    width: 75px;
-    font-size: large;
+    width: 7vw;
+    font-size: 1.5vw;
     background-color: black;
     color: white;
     border: none;
@@ -118,5 +119,14 @@ a
         {
             font-weight: normal;
         }
+    }
+}
+
+@media screen and (min-height: 1024px)
+{
+    #home, #about, #terms, #create, #login
+    {
+        width: 10vw;
+        font-size: 2vw;
     }
 }

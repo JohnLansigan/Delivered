@@ -1,12 +1,13 @@
 #home
 {
-    border-bottom: 4px #2791f5 solid;
+    border-bottom: .3vw #2791f5 solid;
     color: #2791f5;
 }
 
 body
 {
     height: auto;
+    width: auto;
 }
 
 #intro-container
@@ -16,7 +17,6 @@ body
     text-align: center;
     gap: 2rem;
     justify-content: flex-end;
-    padding: 2%;
     
     h1
     {
@@ -43,4 +43,9 @@ body
     {
         background-color: #2791f5;
     }
+}
+
+#woman
+{
+    width: 100%;
 }
