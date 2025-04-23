@@ -19,7 +19,7 @@
 
     <div id='nav-container'>
 
-        <img id='logo' src="DeliveredLogo.png" alt="logo.png">
+        <img id='logo' src="icon.png" alt="logo.png">
 
         <div id='middle-nav'>
 
@@ -43,9 +43,9 @@
 
         <a href="create.php"><button><h2>Deliver a Message</h2></button></a>
 
-    </div>
+        <img id='woman' src="woman.png" alt="woman.png">
 
-    <img src="woman.png" alt="woman.png">
+    </div>
 
     <div id='footer-container'>
 
