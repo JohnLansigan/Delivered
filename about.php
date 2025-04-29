@@ -106,15 +106,9 @@
 
             <div class = "slide">
                 <div class = "slide-wrapper">
-                    <div class = "indiv-slide">
-                        <img src = "placeholder.jpg" alt = "slide 1">
-                    </div>
-                    <div class = "indiv-slide">
-                        <img src = "placeholder.jpg" alt = "slide 2">
-                    </div>
-                    <div class = "indiv-slide">
-                        <img src = "placeholder.jpg" alt = "slide 3">
-                    </div>
+                    <center><span><img src = "placeholder.jpg" alt = "slide 1" height = "300px" width = "300px">
+                    <img src = "placeholder.jpg" alt = "slide 2" height = "300px" width = "300px">
+                    <img src = "placeholder.jpg" alt = "slide 3" height = "300px" width = "300px"></span></center>
                 </div>
             </div>
             
