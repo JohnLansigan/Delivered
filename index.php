@@ -63,7 +63,7 @@
 </head>
 <body>
     <div id='nav-container'>
-        <img id='logo' src="icon.png" alt="logo.png">
+        <a href = "index.php"><img id='logo' src="icon.png" alt="logo.png"></a>
         <div id='middle-nav'>
             <a href="index.php"><button id='home'>Home</button></a>
             <a href="about.php"><button id='about'>About</button></a>
