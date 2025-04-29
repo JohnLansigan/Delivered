@@ -8,6 +8,8 @@ body
 {
     height: auto;
     width: auto;
+    background-color: #559dd0;
+    margin:0;
 }
 
 #intro-container
@@ -17,15 +19,18 @@ body
     text-align: center;
     gap: 2rem;
     justify-content: flex-end;
+    margin-top: 3%;
     
     h1
     {
         font-size: 5vw;
+        color: #ecece1;
     }
 
     h2
     {
         font-weight: normal;
+        color: #ecece1;
     }
 
     button
@@ -44,6 +49,55 @@ body
         background-color: #2791f5;
     }
 }
+
+#title-container
+{
+    background-color: #2977c5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    border-radius: 42px;
+    width: 67%;
+    height: 14.18vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #ecece1;
+
+}
+
+#onetwothree
+{
+    width: 80%;
+    height: 17.02vh;
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5%;
+}
+
+#onetwothree p 
+{
+    color: #ecece1;
+    font-size: 24px;
+}
+.dot
+{
+    height: 25px;
+    width: 25px;
+    background-color: #ecece1;
+    border-radius: 50%;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.dot h3
+{
+    color: #2977c5;
+}
+
 
 #woman
 {
