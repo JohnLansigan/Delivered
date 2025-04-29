@@ -19,7 +19,7 @@
 
     <div id='nav-container'>
 
-        <img id='logo' src="icon.png" alt="logo.png">
+        <a href = "index.php"><img id='logo' src="icon.png" alt="logo.png"></a>
 
         <div id='middle-nav'>
 
