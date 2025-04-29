@@ -235,10 +235,18 @@
         <h2>Additional Notes</h2>
         <ul><li>
         Updates and Amendments: We may update and amend this Privacy Policy from time to time by posting an amended version on our Service. The amended version will be effective as of the date it is published. When we make material changes to this Privacy Policy, we’ll provide Users with notice as appropriate under the circumstances, e.g., by displaying a prominent notice within the Service or by sending an email. Your continued use of the Service after the changes have been implemented will constitute your acceptance of the changes.<b> Last Updated: April 21, 2025.</b>
-        </li></ul><br><br><br><br><br>
+        </li></ul><br><br><br>
+
+
+        <center><a href = "signup.php"><button class = "signupButton">To signup</button></a></center>
+
+
+        <br><br><br>
 
         <center><b>Contact us: 09123456789</b></center>
-        <center><b>Email us: deliveredwebsite@rocketmail.com</b></center>
+        <center><b>Email us: <a href = "https://gmail.com:">deliveredwebsite@rocketmail.com</a></b></center>
+
+        
 
 
 

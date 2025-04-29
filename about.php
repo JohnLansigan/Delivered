@@ -103,6 +103,20 @@
         <p>
             <h1><center>LET YOUR MESSAGE <br>
             BE DELIVERED.</center></h1><br><br><br><br>
+
+            <div class = "slide">
+                <div class = "slide-wrapper">
+                    <div class = "indiv-slide">
+                        <img src = "placeholder.jpg" alt = "slide 1">
+                    </div>
+                    <div class = "indiv-slide">
+                        <img src = "placeholder.jpg" alt = "slide 2">
+                    </div>
+                    <div class = "indiv-slide">
+                        <img src = "placeholder.jpg" alt = "slide 3">
+                    </div>
+                </div>
+            </div>
             
             <h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
         </p>
