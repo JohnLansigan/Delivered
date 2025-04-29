@@ -86,7 +86,7 @@
         ?>
     </div>
     <div id='intro-container'>
-        <h1>LET YOUR MESSAGE<br>BE DELIVERED</h1>
+        <h1>Welcome to<br>[DELIVERED]</h1>
         <h2>Voice out the thoughts you could never get out.<br>One message at a time.</h2>
         <a href="create.php"><button><h2>Deliver a Message</h2></button></a>
         <img id='woman' src="woman.png" alt="woman.png">

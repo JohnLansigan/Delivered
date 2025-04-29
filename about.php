@@ -101,8 +101,8 @@
 
     <div id="desc">
         <p>
-            <h1><center>Welcome to  <br>
-            [DELIVERED]</center></h1><br><br><br><br>
+            <h1><center>LET YOUR MESSAGE <br>
+            BE DELIVERED.</center></h1><br><br><br><br>
             
             <h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
         </p>

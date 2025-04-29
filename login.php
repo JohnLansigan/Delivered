@@ -36,7 +36,7 @@
             <br>
             <input type="submit" value="Login">
         </form>
-        <p>No account yet? <a href="create.php">Create an account</a></p>
+        <p>No account yet? <a href="signup.php">Create an account</a></p>
     </div>
 
     <div id='footer-container'>

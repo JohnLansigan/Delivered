@@ -95,6 +95,7 @@
         }
         ?>
     </div>
+    <br><br>
 
     <div class='main-container'>
 
@@ -244,7 +245,7 @@
     
     </p>
 
-    </div>
+    </div><br><br><br>
 
     <div id='footer-container'>
 
