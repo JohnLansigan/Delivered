@@ -14,7 +14,7 @@ body
 #desc
 {
     margin:0 auto;
-    width: 60vw;    
+    width: 75vw;    
     color: #ecece1;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@ body
 }
 #desc h1
 {
-    font-size: 15vh;
+    font-size: 5vw;
 }
 
 #desc:last-child
@@ -33,6 +33,7 @@ body
 
 h3{
     text-align: justify;
+    font-weight: normal;
 }
 
 h2{
@@ -41,7 +42,7 @@ h2{
 
 #panel1{
     margin: 0 auto;
-    width: 90vw;
+    width: 75vw;
     display: flex;
     align-content: center;
     flex-direction: row;
@@ -51,11 +52,110 @@ h2{
 
 #aboutUsPic{
     height: 30vh;
-    width: 30vw;
+    width: 25vw;
+}
+
+#aboutUsPic2{
+    height: 30vh;
+    width: 25vw;
+    display: flex;
+    justify-content:end;
+}
+
+#aboutUsTitle{
+    background-color: #418ABF;
+    height: 6.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3vh;
+    width: 20vw;
 }
 
 #aboutUsText{
     color:#ecece1;
-    height: 250px;
-    width: 60vw;
+    height: 30vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+#aboutUsText h3{
+    padding-top: 1vh;
+}
+
+#joinPanel {
+    background-color: #252525;
+    border-radius: 8px;
+    width: 75vw;
+    padding: 5rem 0 1.5rem;
+    position: relative;
+    margin-top:8vh;
+}
+
+#joinPanel h1{
+    color: #ecece1;
+}
+
+#joinPanelLogo {
+    text-align: center;
+    width: 100%;
+    top: -4rem;
+    left: 0;
+    position: absolute;
+}
+
+.signupButton {
+    margin-top: 3vh;
+    appearance: none;
+    background-color: #2791f5;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  .signupButton:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .signupButton:hover {
+    background-color: #ecece1;
+  }
+  
+  .signupButton:focus {
+    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    outline: none;
+  }
+  
+  .signupButton:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+  }
+  
+  .signupButton:active {
+    background-color: #ecece1;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+  }
+
+
