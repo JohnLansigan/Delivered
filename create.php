@@ -12,61 +12,10 @@
     <link rel="stylesheet" href="create.css">
 
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
-    <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0; 
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-button {
-            background-color: black;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            display: flex; 
-            align-items: center;
-            gap: 5px; 
-            height: 100%;
-        }
-
-        .dropdown-button:hover {
-            background-color: #2791f5;
-        }
-
-        .dropdown-button img {
-    height: 2.3vh; 
-    width: auto;  
-}
-    </style>
 </head>
 
-<body>
+<body onload='prompts()'>
 
     <div id='nav-container'>
 
@@ -120,13 +69,13 @@
 
         <div id='reply-container'>
 
-            <div>What's on your mind?</div>
+            <div id='reply'></div>
 
         </div>
 
         <div id='message-container'>
 
-            <div id='message' contenteditable="true">Type message here</div>
+            <div id='message' contenteditable="true"></div>
             <h2 id='delivered'>Delivered</h2>
 
         </div>
@@ -135,7 +84,7 @@
 
             <div id='prompt'>
                 Send Message?
-                <button id='send'>↑</button>
+                <button id='send' onmouseover="sendOver(event)" onmouseout="sendOut(event)">↑</button>
             </div>     
 
         </div>
@@ -202,12 +151,61 @@
         {
             document.getElementById('delivered').innerHTML = "Not Delivered";
             document.getElementById('delivered').style.color = "red";
+            document.body.style.backgroundColor = "lightcoral";
         }
 
         function cancelOut(event) 
         {
             document.getElementById('delivered').innerHTML = "Delivered";
             document.getElementById('delivered').style.color = "#63636b";
+            document.body.style.backgroundColor = "#8e8e93";
+        }
+
+        function sendOver(event) 
+        {
+            document.body.style.backgroundColor = "lightgreen";
+            typeNextChar();
+        }
+
+        function sendOut(event) 
+        {
+            document.body.style.backgroundColor = "#8e8e93";
+        }
+
+        function prompts()
+        {
+
+            let reply = document.getElementById("reply");
+            let replytText = "What's on your mind?";
+            let x = 0;
+
+            function replyPrompt() 
+            {
+                if (x < replytText.length) 
+                {
+                    reply.innerText += replytText.charAt(x);
+                    x++;
+                    setTimeout(replyPrompt, 70); // Adjust speed here (milliseconds)
+                }
+            }
+
+            replyPrompt();
+
+            let message = document.getElementById("message");
+            let messageText = "Type message here";
+            let i = 0;
+
+            function messagePrompt() 
+            {
+                if (i < messageText.length) {
+                    message.innerText += messageText.charAt(i);
+                i++;
+                setTimeout(messagePrompt, 70); // Adjust speed here (milliseconds)
+                }
+            }
+
+            setTimeout(messagePrompt, 2500);
+
         }
 
     </script>

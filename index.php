@@ -8,58 +8,7 @@
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
-    <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0; 
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-button {
-            background-color: black;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            display: flex; 
-            align-items: center;
-            gap: 5px; 
-            height: 100%;
-        }
-
-        .dropdown-button:hover {
-            background-color: #2791f5;
-        }
-
-        .dropdown-button img {
-    height: 2.3vh; 
-    width: auto;  
-}
-    </style>
+  
 </head>
 <body>
     <div id='nav-container'>
@@ -91,6 +40,44 @@
         <a href="create.php"><button><h2>Deliver a Message</h2></button></a>
         <img id='woman' src="woman.png" alt="woman.png">
     </div>
+
+    <div id='title-container'>
+        <h1>Here is how Delivered works</h1>
+        
+    </div>
+
+    <div id ='onetwothree'>
+        <div id='one'>
+        <span class="dot">
+            <h3>1</h3>
+        </span>
+        <p>Sign in to your
+        account.</p>
+        </div>
+
+        <div id='two'>
+        <span class="dot">
+            <h3>2</h3>
+        </span>
+        <p>Create your message
+        to be delivered</p>
+        </div>
+
+        
+        <div id='three'>
+        <span class="dot">
+            <h3>3</h3>
+        </span>
+        <p>Submit the note and wait for it to be delivered. </p>
+        </div>
+       
+        
+
+
+
+
+
+    </div>   
     <div id='footer-container'>
         <div>
             <h2>[Delivered]</h2>
