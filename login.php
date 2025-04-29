@@ -18,6 +18,20 @@
             <a href="terms.php"><button id='terms'>Terms</button></a>
             <a href="create.php"><button id='create'>Create</button></a>
         </div>
+        <?php
+        session_name("deliveredSession");
+        session_start();
+        if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
+            echo "<div class='dropdown'>";
+            echo "  <button class='dropdown-button'><img src='profile.png' alt='profile.png'><span>" . htmlspecialchars($_SESSION["username"]) . "</span></button>";
+            echo "  <div class='dropdown-content'>";
+            echo "    <a href='logout.php'>Logout</a>";
+            echo "  </div>";
+            echo "</div>";
+        } else {
+            echo "<a href='login.php'><button id='login'><img src='profile.png' alt='profile.png'>Login</button></a>";
+        }
+        ?>
     </div>
 
     <div id="form-container">
@@ -26,7 +40,7 @@
             <input type="text" name="username" placeholder="Username" required><br><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
              <?php
-                session_name("deliveredSession");
+                session_name("session_delivered");
                 session_start();
                 if (isset($_SESSION['login_error'])) {
                     echo "<p style='color: red;'>" . $_SESSION['login_error'] . "</p>";
@@ -46,6 +60,7 @@
             <br><br>
             <p>© 2025 [Delivered] All rights reserved</p>
         </div>
+
         <div>
             <h3>Links</h3>
             <a href="index.php">Home</a>
@@ -53,6 +68,8 @@
             <a href="terms.php">Terms</a>
             <a href="create.php">Create</a>
         </div>
+
+
         <div>
             <h3>The Project</h3>
             <p>News</p>
