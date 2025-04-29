@@ -1,3 +1,9 @@
+body
+{
+    background-color: #8e8e93;
+    transition: 0.3s;
+}
+
 #create
 {
     border-bottom: 4px #2791f5 solid;
@@ -6,9 +12,10 @@
 
 #create-container
 {
+    margin: 2vw;
     background-color: white;
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -72,7 +79,7 @@ h2
         font-size: large;
         border-radius: 15px 15px 15px 0;
         display: inline-block;
-        width: 165px
+        width: max-content;
     }
 }
 

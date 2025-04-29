@@ -8,58 +8,7 @@
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
-    <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0; 
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-button {
-            background-color: black;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            display: flex; 
-            align-items: center;
-            gap: 5px; 
-            height: 100%;
-        }
-
-        .dropdown-button:hover {
-            background-color: #2791f5;
-        }
-
-        .dropdown-button img {
-    height: 2.3vh; 
-    width: auto;  
-}
-    </style>
+  
 </head>
 <body>
     <div id='nav-container'>
