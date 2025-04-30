@@ -36,21 +36,22 @@
 
     <div id="form-container">
         <h1>Login</h1>
+        <br>
         <form action="login_process.php" method="post">
-            <input type="text" name="username" placeholder="Username" required><br><br>
-            <input type="password" name="password" placeholder="Password" required><br><br>
-             <?php
-                session_name("session_delivered");
-                session_start();
-                if (isset($_SESSION['login_error'])) {
-                    echo "<p style='color: red;'>" . $_SESSION['login_error'] . "</p>";
-                    unset($_SESSION['login_error']); 
-                }
-            ?>
-            <br>
+            <input type="text" name="username" placeholder="Username" required> 
+            <input type="password" name="password" placeholder="Password" required>
             <input type="submit" value="Login">
+            <p>No account yet? <a href="signup.php">Create an account</a></p>
+            <?php
+            if (isset($_SESSION['login_error'])) 
+            {
+                echo "<p style='color: red;'>" . $_SESSION['login_error'] . "</p>";
+                unset($_SESSION['login_error']); 
+            }
+        ?>
         </form>
-        <p>No account yet? <a href="signup.php">Create an account</a></p>
+        
+        
     </div>
 
     <div id='footer-container'>
