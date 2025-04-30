@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="about.css">
 
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
 </head>
 
@@ -48,20 +49,28 @@
     
 
 
-    <div id="desc">
+    <div class="desc">
         <p>
             <h1><center>LET YOUR MESSAGE <br>
-            BE DELIVERED.</center></h1><br><br><br><br>
+            BE DELIVERED.</center></h1><br><br><br><br> </div>
 
-            <div class = "slide">
-                <div class = "slide-wrapper">
-                    <center><span><img src = "placeholder.jpg" alt = "slide 1" height = "300px" width = "300px">
-                    <img src = "placeholder.jpg" alt = "slide 2" height = "300px" width = "300px">
-                    <img src = "placeholder.jpg" alt = "slide 3" height = "300px" width = "300px"></span></center>
+            <center><div class = "wrapper">
+                <i id="left" class = "fa-solid fa-angle-left"></i>
+                <div class = "carousel">
+                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
+                    <img src = "woman.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
+                    <img src = "woman.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
+                    <img src = "woman.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
+                    <img src = "woman.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
                 </div>
-            </div>
+                <i id = "right" class = "fa-solid fa-angle-right"></i>
+            </div></center>
             
-            <h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
+            <br><br><div class = "desc"><h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
         </p>
     </div><br><br><br><br><br>
 
@@ -129,6 +138,45 @@
         </div>
 
     </div>
+
+    <script>
+        const carousel = document.querySelector(".carousel"),
+        firstImg = carousel.querySelectorAll("img")[0];
+        arrowIcons = document.querySelectorAll(".wrapper i");
+
+        let isDragStart = false, prevPageX, prevScrollLeft;
+        let firstImgWidth = firstImg.clientWidth + 14;
+
+
+        arrowIcons.forEach(icon => {
+            icon.addEventListener("click", () => {
+                carousel.scrollLeft += icon.id == "left" ? - firstImgWidth : firstImgWidth;
+            });
+        });
+
+        const dragStart = (e) => {
+            isDragStart = true;
+            prevPageX = e.pageX;
+            prevScrollLeft = carousel.scrollLeft;
+        }
+
+        const dragging = (e) => {
+            if(!isDragStart) return;
+            e.preventDefault();
+            carousel.classList.add("dragging");
+            let positionDiff = e.pageX - prevPageX;
+            carousel.scrollLeft = prevScrollLeft - positionDiff;
+        }
+
+        const dragStop = () => {
+            isDragStart = false;
+            carousel.classList.remove("dragging");
+        }
+        
+        carousel.addEventListener("mousedown", dragStart);
+        carousel.addEventListener("mousemove", dragging);
+        carousel.addEventListener("mouseup", dragStop);
+    </script>
     
 </body>
 
