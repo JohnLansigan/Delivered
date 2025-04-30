@@ -72,19 +72,63 @@
             
             <br><br><div class = "desc"><h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
         </p>
-    </div><br><br><br><br><br>
-
-    <center><h2>About Us</h2></center>
+    </div><br><br>
 
     <div id="panel1">
         <div id="aboutUsPic">
-        <img id='ourPic' src="placeholder.jpg" alt="placeholder.jpg" height = "300px" width = "300px">
+            <img id='ourPic' src="placeholder.jpg" alt="placeholder.jpg" height = "100%" width = "300px">
         </div>
         <div id="aboutUsText">
-        <h3>Hello! We are a group of students from the UST College of Information and Computing Sciences. We created this project in partial fulfillment of our requirements for our school. We also wanted to create a freedom wall-like website where users can freely express themselves or lift their feelings by anonymously posting a message to a person they can’t directly send the message to.</h3>
+            <center>
+                <div id="aboutUsTitle">
+                    <Center><h2>About Us</h2></Center>
+                </div>
+
+            <h3>Hello! We are a group of students from the UST College of Information and Computing Sciences. We created this project in partial fulfillment of our requirements for our school. We also wanted to create a freedom wall-like website where users can freely express themselves or lift their feelings by anonymously posting a message to a person they can’t directly send the message to.</h3>
+            </center>
         </div>
     </div>
+    <br>
+    <br>
+    <div id="panel1">
+        <div id="aboutUsText">
+            <center>
+                <div id="aboutUsTitle">
+                    <Center><h2>About Us</h2></Center>
+                </div>
+
+            <h3>We hope that through this platform, users will find comfort in knowing they are not alone in their thoughts and emotions. By allowing anonymous posts, we aim to encourage honesty and vulnerability without fear of judgment or exposure. Each message shared on our site reflects real feelings and experiences, creating a space of empathy and understanding. We believe that even in silence, every voice deserves to be heard and every emotion acknowledged.</h3>
+            </center>
+        </div>
+        <div id="aboutUsPic2">
+            <img id='ourPic' src="placeholder.jpg" alt="placeholder.jpg" height = "100%" width = "300px">
+        </div>
+    </div>
+    <br>
+    <br>
+    <center>
+    <div id="joinPanel">
+        <div id="joinPanelLogo">
+            <img id='ourPic' src="placeholder.jpg" alt="placeholder.jpg" height = "120px" width = "120px">
+        </div>
+        <h1>Join us in a space where anonymous words<br>are delivered with meaning.</h1>
+        <center>
+            <a href = "signup.php"><button class = "signupButton">To signup</button></a>
+        </center>
+    </div>
+    </center>
     
+    <br><br><br><br><br>
+    
+
+
+
+
+
+
+
+
+
     <div id='footer-container'>
 
         <div>

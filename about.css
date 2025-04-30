@@ -14,7 +14,7 @@ body
 .desc
 {
     margin:0 auto;
-    width: 60vw;    
+    width: 75vw;    
     color: #ecece1;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@ body
 }
 .desc h1
 {
-    font-size: 15vh;
+    font-size: 5vw;
 }
 
 .desc:last-child
@@ -33,6 +33,7 @@ body
 
 h3{
     text-align: justify;
+    font-weight: normal;
 }
 
 h2{
@@ -41,7 +42,7 @@ h2{
 
 #panel1{
     margin: 0 auto;
-    width: 90vw;
+    width: 75vw;
     display: flex;
     align-content: center;
     flex-direction: row;
@@ -51,13 +52,33 @@ h2{
 
 #aboutUsPic{
     height: 30vh;
-    width: 30vw;
+    width: 25vw;
+}
+
+#aboutUsPic2{
+    height: 30vh;
+    width: 25vw;
+    display: flex;
+    justify-content:end;
+}
+
+#aboutUsTitle{
+    background-color: #418ABF;
+    height: 6.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3vh;
+    width: 20vw;
 }
 
 #aboutUsText{
     color:#ecece1;
-    height: 250px;
-    width: 60vw;
+    height: 30vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .wrapper {
