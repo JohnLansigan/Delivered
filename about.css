@@ -81,6 +81,27 @@ h2{
     justify-content: center;
 }
 
+#joinPanel {
+    background-color: #000000;
+    border-radius: 8px;
+    width: 75vw;
+    padding: 5rem 0 1.5rem;
+    position: relative;
+    margin-top:8vh;
+}
+
+#joinPanel h1{
+    color: #ecece1;
+}
+
+#joinPanelLogo {
+    text-align: center;
+    width: 100%;
+    top: -4rem;
+    left: 0;
+    position: absolute;
+}
+
 .wrapper {
     display: flex;
     padding: 0 35px;

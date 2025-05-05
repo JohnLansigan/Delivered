@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="account.css">
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
-  
+ 
 </head>
 <body>
     <div id='nav-container'>
@@ -33,6 +33,41 @@
             echo "<a href='login.php'><button id='login'><img src='profile.png' alt='profile.png'>Login</button></a>";
         }
         ?>
+    </div>
+    
+    <Center>
+        <div id="accountPanel">
+            <div id="accountPicture">
+                <img class="profile-picture" id="profile-picture-display" src="<?php echo isset($_SESSION['profile_picture']) ? $_SESSION['profile_picture'] : 'profile.png'; ?>" alt="Profile Picture">
+
+                <input type="file" id="profile-picture-display">
+                
+            </div>
+            <h2>Account Information</h2>
+            <div id="accountInfo">
+                <div id="accountName">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" disabled value="<?php echo isset($_SESSION['fname']) ? htmlspecialchars($_SESSION['fname']) : ''; ?>"><br>
+
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" disabled value="<?php echo isset($_SESSION['lname']) ? htmlspecialchars($_SESSION['lname']) : ''; ?>"><br>
+                </div>
+                
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" disabled value="<?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : ''; ?>"><br>
+
+                    <label for="email">Email Address:</label>
+                    <input type="text" id="email" disabled value="<?php echo isset($_SESSION['email']) ? htmlspecialchars($_SESSION['email']) : ''; ?>"><br>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" disabled value="<?php echo isset($_SESSION['address']) ? htmlspecialchars($_SESSION['address']) : ''; ?>"><br>
+
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" disabled value="********"><br>
+            </div>
+            
+    </Center>
+
     </div>
     
     <div id='footer-container'>
