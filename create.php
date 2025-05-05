@@ -30,11 +30,11 @@
 
         </div>
         <?php
-        session_name("deliveredSession");
+        session_name("session_delivered");
         session_start();
         if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
             echo "<div class='dropdown'>";
-            echo "  <button class='dropdown-button'><img src='profile.png' alt='profile.png'><span>" . htmlspecialchars($_SESSION["username"]) . "</span></button>";
+            echo "  <a href='account.php'><button class='dropdown-button'><img src='profile.png' alt='profile.png'><span>" . htmlspecialchars($_SESSION["username"]) . "</span></button></a>";
             echo "  <div class='dropdown-content'>";
             echo "    <a href='logout.php'>Logout</a>";
             echo "  </div>";
@@ -169,7 +169,6 @@
         function sendOver(event) 
         {
             document.body.style.backgroundColor = "lightgreen";
-            typeNextChar();
         }
 
         function sendOut(event) 
@@ -212,6 +211,36 @@
             setTimeout(messagePrompt, 2500);
 
         }
+
+        document.getElementById("send").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const message = document.getElementById("message").innerText.trim();
+    const recipient = document.getElementById("recipient").value.trim();
+
+    if (!message || !recipient) {
+        alert("Both message and recipient are required.");
+        return;
+    }
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "submit_message.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert("Message sent!");
+                window.location.href = "index.php"; // Or wherever you want
+            } else {
+                alert("Error sending message.");
+            }
+        }
+    };
+
+    const params = `message=${encodeURIComponent(message)}&recipient=${encodeURIComponent(recipient)}`;
+    xhr.send(params);
+});
 
     </script>
     

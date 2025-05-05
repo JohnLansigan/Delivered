@@ -2,3 +2,14 @@ body
 {
     height: 100vh;
 }
+
+.dropdown
+{
+    border-bottom: .3vw #2791f5 solid;
+    height: 90%;
+}
+
+.dropdown-button 
+{
+    color: #2791f5;
+}

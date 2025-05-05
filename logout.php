@@ -1,5 +1,5 @@
 <?php
-session_name("deliveredSession");
+session_name("session_delivered");
 session_start();
 
 $_SESSION = array();

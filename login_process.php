@@ -1,5 +1,5 @@
 <?php
-session_name("deliveredSession");
+session_name("session_delivered");
 session_start();
 
 $servername = "127.0.0.1";
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         if (password_verify($password, $hashedPassword)) {
-            $_SESSION["user_id"] = $userID;
+            $_SESSION["userID"] = $userID;
             $_SESSION["username"] = $username;
             $_SESSION["logged_in"] = true;
             header("Location: index.php");

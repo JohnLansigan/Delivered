@@ -20,7 +20,7 @@
             <a href="create.php"><button id='create'>Create</button></a>
         </div>
         <?php
-        session_name("deliveredSession");
+        session_name("session_delivered");
         session_start();
         if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
             echo "<div class='dropdown'>";
@@ -66,15 +66,48 @@
 
     <div id='messages-container'>
 
-        <div id='search-container'>
+        <div style='display:none' id='search-container'>
 
-            <input type="text" name="search" id="search" placeholder='Look for recipient'>
+            <input type="text" name="search" id="search" placeholder='Search...'>
 
             <button>Search</button>
 
         </div>
 
         <h1>What people are saying</h1>
+        
+        <h2>Thousands around the world are using Delivered to<br>send anonymous message to people</h2>
+
+        <div id='messages'>
+
+        <?php
+            $servername = "127.0.0.1";
+            $username = "root";
+            $password = "";
+            $dbname = "db_delivered";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "SELECT message, recipient FROM tbl_messages";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div>";
+                    echo "<p><strong>To: </strong>" . htmlspecialchars($row["recipient"]) . "</p>";
+                    echo "<p>" . htmlspecialchars($row["message"]) . "</p>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<div>No messages yet.</div>";
+            }
+            $conn->close();
+        ?>
+
+        </div>
 
     </div>
 

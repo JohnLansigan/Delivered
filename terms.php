@@ -30,11 +30,11 @@
 
         </div>
         <?php
-        session_name("deliveredSession");
+        session_name("session_delivered");
         session_start();
         if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
             echo "<div class='dropdown'>";
-            echo "  <button class='dropdown-button'><img src='profile.png' alt='profile.png'><span>" . htmlspecialchars($_SESSION["username"]) . "</span></button>";
+            echo "  <a href='account.php'><button class='dropdown-button'><img src='profile.png' alt='profile.png'><span>" . htmlspecialchars($_SESSION["username"]) . "</span></button></a>";
             echo "  <div class='dropdown-content'>";
             echo "    <a href='logout.php'>Logout</a>";
             echo "  </div>";

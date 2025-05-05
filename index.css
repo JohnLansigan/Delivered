@@ -29,10 +29,16 @@ body
         color: #2791f5;
     }
 
+    a
+    {
+        width: 100%;
+    }
+
     h2
     {
         font-weight: normal;
         color: #2791f5;
+        width: auto;
     }
 
     button
@@ -44,7 +50,7 @@ body
         border-radius: 15px;
         transition: .3s;
         cursor: pointer;
-        border: 2px white solid;
+        border: 2px #2791f5 solid;
 
         h2
         {
@@ -104,33 +110,19 @@ body
     align-items: center;
 }
 
-#messages-container
-{
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 1%;
-
-    h1
-    {
-        color: #2791f5;
-    }
-}
-
 #search-container
 {
     width: 60%;
     height: 3rem;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
 
     input
     {
-        width: 85%;
+        width: 87%;
         height: 95%;
-        border-radius: .5rem 0 0 .5rem;
+        border-radius: .5rem;
         font-size: large;
         outline: none;
         border: none;
@@ -140,7 +132,7 @@ body
     {
         width: 10%;
         height: 100%;
-        border-radius: 0 .5rem .5rem 0;
+        border-radius: .5rem;
         color: white;
         background-color: #63636b;
         border: none;
@@ -150,5 +142,72 @@ body
     button:hover
     {
         background-color: #2791f5;
+        cursor: pointer;
+    }
+
+}
+
+#messages-container
+{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 98%;
+    gap: 1rem;
+    padding: 1%;
+
+    h1
+    {
+        color: #2791f5;
+        font-size: 5vw;
+    }
+
+    h2
+    {
+        color: white;
+        text-align: center;
     }
 }
+
+#messages {
+    display: flex;
+    flex-direction: row; /* Changed to row to create columns */
+    flex-wrap: wrap;       /* Allow messages to wrap to new rows (columns) */
+    gap: 1rem;
+    /* Removed: justify-content: space-around;  */ /* Not needed for vertical distribution */
+    align-items: flex-start; /* Important: Align items to the start of the column */
+    width: 100%;
+    height: auto;
+    align-content: flex-start; /* Distribute rows from the start */
+  }
+  
+  #messages div {
+    color: white;
+    width: 30%;      /* Approximate column width */
+    background-color: #2791f5;
+    border-radius: 1rem 1rem 0 1rem;
+    padding: 1rem;
+    word-wrap: break-word;
+    /* height: auto; */  /* Ensure height is determined by content */
+    margin-bottom: 0; /* Remove default bottom margin */
+  }
+  
+  /* Media queries to make it responsive */
+  @media (max-width: 768px) {
+    #messages {
+      flex-direction: column; /* Stack messages on smaller screens */
+      align-items: center;  /* Center the messages */
+    }
+    #messages div {
+      width: 90%; /* Take up most of the width on small screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+      #messages div{
+          width: 100%;
+      }
+  }
+  
