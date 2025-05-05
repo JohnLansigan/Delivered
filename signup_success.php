@@ -16,7 +16,7 @@
         
         #form-container {
             text-align: center;
-            padding: 30px;
+            padding: 30px;   
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 8px;
