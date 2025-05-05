@@ -135,8 +135,9 @@ hr
     font-size: large;
     border-radius: 1000px;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
+    gap: 1rem;
 }
 
 #send

@@ -34,50 +34,50 @@
         }
         ?>
     </div>
+
     <div id='intro-container'>
+
         <h1>Welcome to<br>[DELIVERED]</h1>
+
         <h2>Voice out the thoughts you could never get out.<br>One message at a time.</h2>
+
         <a href="create.php"><button><h2>Deliver a Message</h2></button></a>
+
         <img id='woman' src="woman.png" alt="woman.png">
+
+        <div id='works'><h1>This is how Delivered works</h1></div>
+
+        <div id='steps'>
+
+            <div id='numbers'><h2>1</h2></div>
+            <h2>Sign up and log in<br>to your account.</h2>
+
+            <div id='numbers'><h2>2</h2></div>
+            <h2>Create your message<br>to be delivered.</h2>
+
+            <div id='numbers'><h2>3</h2></div>
+            <h2>Submit the note and<br>wait for delivery.</h2>
+
+        </div>
+
+        <br>
+
     </div>
 
-    <div id='title-container'>
-        <h1>Here is how Delivered works</h1>
-        
+    <div id='messages-container'>
+
+        <div id='search-container'>
+
+            <input type="text" name="search" id="search" placeholder='Look for recipient'>
+
+            <button>Search</button>
+
+        </div>
+
+        <h1>What people are saying</h1>
+
     </div>
 
-    <div id ='onetwothree'>
-        <div id='one'>
-        <span class="dot">
-            <h3>1</h3>
-        </span>
-        <p>Sign in to your
-        account.</p>
-        </div>
-
-        <div id='two'>
-        <span class="dot">
-            <h3>2</h3>
-        </span>
-        <p>Create your message
-        to be delivered</p>
-        </div>
-
-        
-        <div id='three'>
-        <span class="dot">
-            <h3>3</h3>
-        </span>
-        <p>Submit the note and wait for it to be delivered. </p>
-        </div>
-       
-        
-
-
-
-
-
-    </div>   
     <div id='footer-container'>
         <div>
             <h2>[Delivered]</h2>

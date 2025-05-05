@@ -75,7 +75,7 @@
 
         <div id='message-container'>
 
-            <div id='message' contenteditable="true"></div>
+            <div id='message' onkeyup="charactersLeft(event)" contenteditable="true" maxlegnth='20'></div>
             <h2 id='delivered'>Delivered</h2>
 
         </div>
@@ -83,7 +83,7 @@
         <div id='bottom-container'>
 
             <div id='prompt'>
-                Send Message?
+                <div id='characters'>0 / 250 characters</div>
                 <button id='send' onmouseover="sendOver(event)" onmouseout="sendOut(event)">↑</button>
             </div>     
 
@@ -146,6 +146,11 @@
     </div>
 
     <script>
+
+        function charactersLeft(event)
+        {
+            document.getElementById('characters').innerHTML = document.getElementById('message').innerText.trim().length + " / 250 characters";
+        }
 
         function cancelOver(event) 
         {
