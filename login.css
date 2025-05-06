@@ -58,6 +58,14 @@ input:focus {
     border: 2px #2791f5 solid;
 }
 
+#showPass{
+    height: 15px;
+    width: 10.5%;
+    margin-top: 1%;
+
+}
+
+
 #button {
     border-radius: 5px;
     height: 2rem;

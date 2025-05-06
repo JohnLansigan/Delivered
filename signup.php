@@ -79,7 +79,8 @@
         <div>
             <label for="password">Password <strong>*</strong></label>
             <input id='password' type="password" maxlength=50 name="password" required onkeyup="validatePassword()">
-            <input type="checkbox" onclick="passToggle()">Show Password
+            <label for="checkbox">Show Password</label>
+            <input type="checkbox" onclick="passToggle()" id="showPass">
             <p id="password-error" class="error-message"></p>
         </div>
 
@@ -87,7 +88,8 @@
         <div>
             <label for="repassword">Re-enter Password <strong>*</strong></label>
             <input id='repassword' type="password" maxlength=50 name="repassword" required onkeyup="validateRePassword()">
-            <input type="checkbox" onclick="repassToggle()">Show Password
+            <label for="checkbox">Show Password</label>
+            <input type="checkbox" onclick="repassToggle()"  id="showPass">
             <p id="repassword-error" class="error-message"></p>
         </div>
 

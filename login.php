@@ -40,7 +40,10 @@
         <form action="login_process.php" method="post">
             <input type="text" name="username" placeholder="Username" required> 
             <input type="password" name="password" id = "passInput" placeholder="Password" required>
-            <input type="checkbox" onclick="passToggle()">Show Password
+            <div id="showPas">
+                <label for="checkbox">Show Password</label>
+                <input type="checkbox" onclick="passToggle()" id="showPass">
+            </div>
             <input type="submit" value="Login" id='button'>
             <p>No account yet? <a href="signup.php">Create an account</a></p>
             <?php
