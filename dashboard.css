@@ -1,3 +1,9 @@
+#dashboard
+{
+    border-bottom: .3vw #2791f5 solid;
+    color: #2791f5;
+}
+
 * {
     box-sizing: border-box;
   }

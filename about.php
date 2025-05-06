@@ -28,11 +28,38 @@
             <a href="about.php"><button id='about'>About</button></a>
             <a href="terms.php"><button id='terms'>Terms</button></a>
             <a href="create.php"><button id='create'>Create</button></a>
-
-        </div>
             <?php
                 session_name("session_delivered");
                 session_start();
+
+                $servername = "127.0.0.1";
+                $username = "root";
+                $password = "";
+                $dbname = "db_delivered";
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
+                    $loggedInUserID = $_SESSION["userID"];
+
+                    $adminCheckSql = "SELECT adminID FROM tbl_admins WHERE userID = ?";
+                    $adminCheckStmt = $conn->prepare($adminCheckSql);
+                    $adminCheckStmt->bind_param("i", $loggedInUserID);
+                    $adminCheckStmt->execute();
+                    $adminCheckResult = $adminCheckStmt->get_result();
+
+                    if ($adminCheckResult->num_rows > 0) {
+                        echo "<a href='dashboard.php'><button id='dashboard'>Admin</button></a>";
+                    }
+                    $adminCheckStmt->close();
+                }
+            ?>
+
+        </div>
+            <?php
                 if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
                     echo "<div class='dropdown'>";
                     echo "  <a href='account.php'><button class='dropdown-button'><img src='profile.png' alt='profile.png'><span>" . htmlspecialchars($_SESSION["username"]) . "</span></button></a>";

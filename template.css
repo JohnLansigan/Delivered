@@ -15,6 +15,7 @@ body
 
 #nav-container
 {
+    z-index: 1000;
     height: 5vh;
     width: auto;
     display: flex;
@@ -23,6 +24,15 @@ body
     background-color: black;
     position: sticky;
     top: 0;
+
+    
+}
+
+#nav-container > a:first-child, #logo
+{
+    height: auto;
+    display: flex;
+    align-items: center;
 }
 
 #middle-nav
@@ -32,6 +42,7 @@ body
     align-items: center;
 }
 
+
 #logo
 {
     height: auto;
@@ -39,7 +50,7 @@ body
     margin: 0 10px 0 10px;
 }
 
-#home, #about, #terms, #create, #login
+#home, #about, #terms, #create, #login, #dashboard, #users
 {
     height: 100%;
     width: 7vw;
@@ -69,7 +80,7 @@ a
     text-decoration: none;
 }
 
-#home:hover, #about:hover, #terms:hover, #create:hover, #user:hover, #login:hover
+#home:hover, #about:hover, #terms:hover, #create:hover, #user:hover, #login:hover, #dashboard:hover, #users:hover
 {
     background-color: #2791f5;
     color: white;

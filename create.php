@@ -27,11 +27,38 @@
             <a href="about.php"><button id='about'>About</button></a>
             <a href="terms.php"><button id='terms'>Terms</button></a>
             <a href="create.php"><button id='create'>Create</button></a>
+            <?php
+                session_name("session_delivered");
+                session_start();
+
+                $servername = "127.0.0.1";
+                $username = "root";
+                $password = "";
+                $dbname = "db_delivered";
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
+                    $loggedInUserID = $_SESSION["userID"];
+
+                    $adminCheckSql = "SELECT adminID FROM tbl_admins WHERE userID = ?";
+                    $adminCheckStmt = $conn->prepare($adminCheckSql);
+                    $adminCheckStmt->bind_param("i", $loggedInUserID);
+                    $adminCheckStmt->execute();
+                    $adminCheckResult = $adminCheckStmt->get_result();
+
+                    if ($adminCheckResult->num_rows > 0) {
+                        echo "<a href='dashboard.php'><button id='dashboard'>Admin</button></a>";
+                    }
+                    $adminCheckStmt->close();
+                }
+            ?>
 
         </div>
         <?php
-        session_name("session_delivered");
-        session_start();
         if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
             echo "<div class='dropdown'>";
             echo "  <a href='account.php'><button class='dropdown-button'><img src='profile.png' alt='profile.png'><span>" . htmlspecialchars($_SESSION["username"]) . "</span></button></a>";
@@ -51,7 +78,7 @@
 
             <h1>New Message</h1>
             
-            <a href="index.php>"><button id='cancel' onmouseover="cancelOver(event)" onmouseout="cancelOut(event)">Cancel</button></a>
+            <a href="index.php"><button id='cancel' onmouseover="cancelOver(event)" onmouseout="cancelOut(event)">Cancel</button></a>
 
         </div>
 
@@ -75,7 +102,7 @@
 
         <div id='message-container' onclick='clearMessage(event)'>
 
-            <div id='message' onkeyup="charactersLeft(event)" contenteditable="true" maxlegnth='20'></div>
+            <div id='message' onkeyup="charactersLeft(event)" contenteditable="true"></div>
             <h2 id='delivered'>Delivered</h2>
 
         </div>
@@ -83,7 +110,7 @@
         <div id='bottom-container'>
 
             <div id='prompt'>
-                <div id='characters'>0 / 250 characters</div>
+                <div id='characters'>0 characters</div>
                 <button id='send' onmouseover="sendOver(event)" onmouseout="sendOut(event)">↑</button>
             </div>     
 
@@ -155,7 +182,7 @@
 
         function charactersLeft(event)
         {
-            document.getElementById('characters').innerHTML = document.getElementById('message').innerText.trim().length + " / 1000 characters";
+            document.getElementById('characters').innerHTML = document.getElementById('message').innerText.trim().length + " characters";
         }
 
         function cancelOver(event) 
