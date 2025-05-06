@@ -30,25 +30,23 @@
             <a href="create.php"><button id='create'>Create</button></a>
 
         </div>
-        <?php
-        session_name("session_delivered");
-        session_start();
-        if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
-            echo "<div class='dropdown'>";
-            echo "  <a href='account.php'><button class='dropdown-button'><img src='profile.png' alt='profile.png'><span>" . htmlspecialchars($_SESSION["username"]) . "</span></button></a>";
-            echo "  <div class='dropdown-content'>";
-            echo "    <a href='logout.php'>Logout</a>";
-            echo "  </div>";
-            echo "</div>";
-        } else {
-            echo "<a href='login.php'><button id='login'><img src='profile.png' alt='profile.png'>Login</button></a>";
-        }
-        ?>
-    </div>
+            <?php
+                session_name("session_delivered");
+                session_start();
+                if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
+                    echo "<div class='dropdown'>";
+                    echo "  <a href='account.php'><button class='dropdown-button'><img src='profile.png' alt='profile.png'><span>" . htmlspecialchars($_SESSION["username"]) . "</span></button></a>";
+                    echo "  <div class='dropdown-content'>";
+                    echo "    <a href='logout.php'>Logout</a>";
+                    echo "  </div>";
+                    echo "</div>";
+                } else {
+                    echo "<a href='login.php'><button id='login'><img src='profile.png' alt='profile.png'>Login</button></a>";
+                }
+            ?>
+        </div>
     </div>
     
-
-
     <div class="desc">
         <p>
             <h1><center>LET YOUR MESSAGE <br>
@@ -120,15 +118,6 @@
     
     <br><br><br><br><br>
     
-
-
-
-
-
-
-
-
-
     <div id='footer-container'>
 
         <div>
