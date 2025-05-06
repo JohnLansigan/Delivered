@@ -79,12 +79,15 @@
         <div>
             <label for="password">Password <strong>*</strong></label>
             <input id='password' type="password" maxlength=50 name="password" required onkeyup="validatePassword()">
+            <input type="checkbox" onclick="passToggle()">Show Password
             <p id="password-error" class="error-message"></p>
         </div>
+
 
         <div>
             <label for="repassword">Re-enter Password <strong>*</strong></label>
             <input id='repassword' type="password" maxlength=50 name="repassword" required onkeyup="validateRePassword()">
+            <input type="checkbox" onclick="repassToggle()">Show Password
             <p id="repassword-error" class="error-message"></p>
         </div>
 
@@ -266,6 +269,7 @@
             }
         }
 
+
         function validateForm() {
             const isFirstNameValid = validateFirstName();
             const isLastNameValid = validateLastName();
@@ -278,6 +282,24 @@
 
             return isFirstNameValid && isLastNameValid && isAddressValid && isEmailValid && isUsernameValid && isPasswordValid && isRePasswordValid && isAcceptValid;
         }
+
+        function passToggle() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            }
+
+        function repassToggle() {
+            var x = document.getElementById("repassword");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            }
     </script>
 
 </body>
