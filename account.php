@@ -36,39 +36,21 @@
     </div>
     
     <Center>
-        <div id="accountPanel">
-            <div id="accountPicture">
-                <img class="profile-picture" id="profile-picture-display" src="<?php echo isset($_SESSION['profile_picture']) ? $_SESSION['profile_picture'] : 'profile.png'; ?>" alt="Profile Picture">
-
-                <input type="file" id="profile-picture-display">
-                
-            </div>
-            <h2>Account Information</h2>
-            <div id="accountInfo">
-                <div id="accountName">
-                    <label for="fname">First Name:</label>
-                    <input type="text" id="fname" disabled value="<?php echo isset($_SESSION['fname']) ? htmlspecialchars($_SESSION['fname']) : ''; ?>"><br>
-
-                    <label for="lname">Last Name:</label>
-                    <input type="text" id="lname" disabled value="<?php echo isset($_SESSION['lname']) ? htmlspecialchars($_SESSION['lname']) : ''; ?>"><br>
-                </div>
-                
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" disabled value="<?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : ''; ?>"><br>
-
-                    <label for="email">Email Address:</label>
-                    <input type="text" id="email" disabled value="<?php echo isset($_SESSION['email']) ? htmlspecialchars($_SESSION['email']) : ''; ?>"><br>
-
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" disabled value="<?php echo isset($_SESSION['address']) ? htmlspecialchars($_SESSION['address']) : ''; ?>"><br>
-
-                    <label for="password">Password:</label>
-                    <input type="text" id="password" disabled value="********"><br>
-            </div>
-            
+        <div id="accountInfo">
+        
+            <h2><center>Account Information</center></h2>
+    <!--fname lname username email address passsword -->        
     </Center>
-
+                <div id = "accountText">
+                <p id ="accountText"><h3>Full Name: <h3> <p></p>
+                <h3>Username: <h3> <p></p>
+                <h3>Email: <h3> <p></p>
+                <h3>Address: <h3> <p></p>
+                <h3>Password: <h3> <p></p></p>
     </div>
+    </div>
+
+    
     
     <div id='footer-container'>
         <div>
