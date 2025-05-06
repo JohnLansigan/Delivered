@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="signup.css">
 
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <style>
         .error-message {
             color: red;
-            font-size: 0.8em;
-            margin-top: 5px;
+            font-size: 1em;
         }
     </style>
 
@@ -54,8 +55,12 @@
                 <input id='fname' type="text" maxlength=50 name="fname" required onkeyup="validateFirstName()">
                 <input id='lname' type="text" maxlength=50 name="lname" required onkeyup="validateLastName()">
             </div>
-            <p id="fname-error" class="error-message"></p>
-            <p id="lname-error" class="error-message"></p>
+            
+            <div>
+                <p id="fname-error" class="error-message"></p>
+                <p id="lname-error" class="error-message"></p>
+            </div>
+
         </div>
 
         <div>
@@ -78,26 +83,28 @@
 
         <div>
             <label for="password">Password <strong>*</strong></label>
-            <input id='password' type="password" maxlength=50 name="password" required onkeyup="validatePassword()">
-            <label for="checkbox">Show Password</label>
-            <input type="checkbox" onclick="passToggle()" id="showPass">
-            <p id="password-error" class="error-message"></p>
+            <input id='password' type="password" maxlength=50 name="password" required onkeyup="validatePassword(); validateRePassword()">
+            <div id="password-error" class="error-message"></div>
         </div>
 
 
         <div>
             <label for="repassword">Re-enter Password <strong>*</strong></label>
             <input id='repassword' type="password" maxlength=50 name="repassword" required onkeyup="validateRePassword()">
-            <label for="checkbox">Show Password</label>
-            <input type="checkbox" onclick="repassToggle()"  id="showPass">
-            <p id="repassword-error" class="error-message"></p>
+            <input type="checkbox" onclick="repassToggle()"  id="show">
+            <label for="checkbox">Show Passwords</label>
+            <div id="repassword-error" class="error-message"></div>
         </div>
+
+        <hr>
 
         <div>
             <input type="checkbox" id="accept" name="accept" required onchange="validateAccept()">
             <label for="accept">By signing up you agree to our <a href="terms.php">Terms and conditions</a></label>
-            <p id="accept-error" class="error-message"></p>
+            <div id="accept-error" class="error-message"></div>
         </div>
+
+        
 
         <button type="submit">Sign Up</button>
 
@@ -285,23 +292,18 @@
             return isFirstNameValid && isLastNameValid && isAddressValid && isEmailValid && isUsernameValid && isPasswordValid && isRePasswordValid && isAcceptValid;
         }
 
-        function passToggle() {
+        function repassToggle() {
             var x = document.getElementById("password");
+            var y = document.getElementById("repassword");
             if (x.type === "password") {
                 x.type = "text";
+                y.type = "text";
             } else {
                 x.type = "password";
+                y.type = "password";
             }
             }
 
-        function repassToggle() {
-            var x = document.getElementById("repassword");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
-            }
     </script>
 
 </body>

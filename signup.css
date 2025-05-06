@@ -12,7 +12,7 @@
     justify-self: center;
     align-self: center;
     border-radius: 15px;
-    padding: 1%;
+    padding: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     justify-content: space-between;
@@ -22,7 +22,11 @@
 
     div
     {
-        width: 85%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+
         div
         {
             display: flex;
@@ -58,12 +62,11 @@ input
     color: #8e8e93;
 }
 
-#showPass{
-    height: 15px;
-    width: 5%;
-    margin-top: 1%;
-    
+#show
+{
+    width: auto;
 }
+
 input:focus
 {
     border: 2px #2791f5 solid;
@@ -94,11 +97,21 @@ a
 
 #accept
 {
-    height: 15px;
     width: auto;
 }
 
 #accept:hover
 {
     cursor: pointer;
+}
+
+hr
+{
+    border: 1px #8e8e93 solid;
+    width: 100%;
+}
+
+.error-message
+{
+    width: 48%;
 }

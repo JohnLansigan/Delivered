@@ -9,14 +9,15 @@ body
     color: #2791f5;
 }
 
-#form-container {
+#form-container 
+{
     display: flex;
     flex-direction: column;
     width: 40%;
     justify-self: center;
     align-self: center;
     border-radius: 15px;
-    padding: 1%;
+    padding: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     justify-content: space-between;
@@ -42,6 +43,7 @@ strong {
 }
 
 input {
+    
     width: calc(100% - 4px);
     height: 35px;
     width: 100%;
@@ -50,21 +52,32 @@ input {
     transition: 0.3s;
     font-size: large;
     color: #8e8e93;
-    padding: 0;
-    border: 1px solid #ccc;
+    padding: .3rem;
 }
 
 input:focus {
     border: 2px #2791f5 solid;
 }
 
-#showPass{
-    height: 15px;
-    width: 10.5%;
-    margin-top: 1%;
+#show-container
+{
+    height: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    gap: .1rem;
+    align-items: center;
 
+    div
+    {
+        font-size: 1rem;
+    }
 }
 
+#show
+{
+    width: auto;
+}
 
 #button {
     border-radius: 5px;
@@ -85,3 +98,4 @@ a {
     text-decoration: none;
     color: #2791f5;
 }
+
