@@ -66,21 +66,21 @@
                     }
 
                     if (messageChart) {
-                        messageChart.destroy(); // Destroy existing chart instance before re-rendering
+                        messageChart.destroy();
                     }
 
                     messageChart = new Chart(ctx, {
-                        type: 'line', // Type of chart
+                        type: 'line',
                         data: {
-                            labels: apiData.labels, // Labels for the X-axis (e.g., "May 06, 14:00")
+                            labels: apiData.labels, 
                             color: 'white',
                             datasets: [{
                                 label: 'Total Messages', 
-                                data: apiData.data,   // Data points for the Y-axis
+                                data: apiData.data,
                                 fill: true,
                                 borderColor: '#2791f5',
                                 backgroundColor: '#2791f56a',
-                                tension: 0 // Makes the line slightly curved
+                                tension: 0
                             }]
                         },
                         options: {
