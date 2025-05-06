@@ -172,3 +172,13 @@ hr
 {
     background-color: #1b6db9;
 }
+
+.swal2-confirm
+{
+    background-color: #2791f5;
+}
+
+.swal2-deny
+{
+    background-color: #63636b;
+}

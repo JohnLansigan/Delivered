@@ -11,6 +11,7 @@ body
     background-color: white;
     margin:0;
     display: flex;
+    gap: 0;
 }
 
 #intro-container
@@ -199,5 +200,20 @@ body
     cursor: pointer;
 }
 
-
-  
+#ad-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-image: linear-gradient(#2791f5, black);
+    width: 98%;
+    border-radius: 1rem 1rem 0 0;
+    gap: 1rem;
+    
+    h1
+    {
+        text-align: center;
+        color: white;
+    }
+}  

@@ -138,7 +138,15 @@
 
         </div>
 
+        <div id='ad-container'>
+
+            <h1>Join us in a space where anonymous words are delivered with meaning.</h1>
+
+        </div>
+
     </div>
+
+   
 
     <div id='footer-container'>
         <div>

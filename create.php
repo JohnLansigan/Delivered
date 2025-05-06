@@ -13,6 +13,8 @@
 
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body onload='prompts()'>
@@ -88,7 +90,7 @@
 
             <h2>To: </h2>
 
-            <input id='recipient' type="text" placeholder='Recipient' maxlength=50>
+            <input id='recipient' type="text" placeholder='Recipient' maxlength=50 require>
 
         </div>
 
@@ -102,7 +104,7 @@
 
         <div id='message-container' onclick='clearMessage(event)'>
 
-            <div id='message' onkeyup="charactersLeft(event)" contenteditable="true"></div>
+            <div id='message' onkeyup="charactersLeft(event)" contenteditable="false"></div>
             <h2 id='delivered'>Delivered</h2>
 
         </div>
@@ -239,6 +241,10 @@
                 i++;
                 setTimeout(messagePrompt, 70);
                 }
+                else
+                {
+                    document.getElementById("message").contentEditable = true;
+                }
             }
 
             setTimeout(messagePrompt, 2500);
@@ -251,9 +257,15 @@
     const message = document.getElementById("message").innerText.trim();
     const recipient = document.getElementById("recipient").value.trim();
 
-    if (!message || !recipient) {
-        alert("Both message and recipient are required.");
-        return;
+    if (!message || message === "Type message here" || !recipient) 
+    {
+        Swal.fire
+        ({
+            title: 'Invalid Message!',
+            text: 'Both the message and recipient are required',
+            icon: 'error',
+            confirmButtonText: 'Reload Page'
+        })
     }
 
     const xhr = new XMLHttpRequest();
@@ -262,18 +274,43 @@
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                alert("Message sent!");
-                window.location.href = "index.php"; // Or wherever you want
-            } else {
-                alert("Error sending message.");
+            if (xhr.status === 200) 
+            {
+                Swal.fire
+                ({
+                    title: "Delivered!",
+                    icon: 'success',
+                    showDenyButton: true,
+                    confirmButtonText: "View Message",
+                    denyButtonText: `Send Another`
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "index.php";
+                } else if (result.isDenied) {
+                    window.location.href = "create.php";
+                }
+                });
+            } 
+            else 
+            {
+                Swal.fire
+                ({
+                    title: 'Failed to Deliver!',
+                    icon: 'error',
+                    confirmButtonText: 'Reload Page'
+                }).then((result) => {
+                    if (result.isConfirmed) 
+                    {
+                        window.location.href = "create.php";
+                    }
+                });
             }
         }
     };
 
-    const params = `message=${encodeURIComponent(message)}&recipient=${encodeURIComponent(recipient)}`;
-    xhr.send(params);
-});
+        const params = `message=${encodeURIComponent(message)}&recipient=${encodeURIComponent(recipient)}`;
+        xhr.send(params);
+    });
 
     </script>
     
