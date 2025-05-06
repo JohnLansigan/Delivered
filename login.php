@@ -39,7 +39,8 @@
         <br>
         <form action="login_process.php" method="post">
             <input type="text" name="username" placeholder="Username" required> 
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" id = "passInput" placeholder="Password" required>
+            <input type="checkbox" onclick="passToggle()">Show Password
             <input type="submit" value="Login" id='button'>
             <p>No account yet? <a href="signup.php">Create an account</a></p>
             <?php
@@ -50,7 +51,17 @@
             }
         ?>
         </form>
-        
+
+        <script>
+        function passToggle() {
+            var x = document.getElementById("passInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            }
+            </script>
         
     </div>
 
@@ -93,5 +104,6 @@
             <p>TikTok</p>
         </div>
     </div>
-</body>
+
+    </body>
 </html>
