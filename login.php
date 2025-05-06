@@ -19,7 +19,7 @@
             <a href="create.php"><button id='create'>Create</button></a>
         </div>
         <?php
-        session_name("deliveredSession");
+        session_name("session_delivered");
         session_start();
         if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
             echo "<div class='dropdown'>";
@@ -46,7 +46,7 @@
             if (isset($_SESSION['login_error'])) 
             {
                 echo "<p style='color: red;'>" . $_SESSION['login_error'] . "</p>";
-                unset($_SESSION['login_error']); 
+                unset($_SESSION['login_error']);    
             }
         ?>
         </form>

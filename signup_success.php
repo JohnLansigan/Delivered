@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="signup.css">
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
     <style>
+        
+        body{
+            height:100vh;
+        }
+        
         #form-container {
             text-align: center;
-            padding: 30px;
+            padding: 30px;   
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -74,7 +79,8 @@
             echo "<p>You are now logged in as: <strong>" . htmlspecialchars($_SESSION["username"]) . "</strong></p>";
             echo "<p><a href='index.php' class='button-link'>Go to the Homepage</a></p>";
         } else {
-            echo "<p>You can now <a href='login.php' class='button-link'>Log In</a> to your new account.</p>";
+            echo "<p>You can now Login to your new account.</p>";
+            echo "<a href='login.php' class='button-link'>Log In</a>";
         }
 
         // unset($_SESSION["username"]);
