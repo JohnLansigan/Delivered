@@ -58,6 +58,12 @@ input
     color: #8e8e93;
 }
 
+#showPass{
+    height: 15px;
+    width: 5%;
+    margin-top: 1%;
+    
+}
 input:focus
 {
     border: 2px #2791f5 solid;

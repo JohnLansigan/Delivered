@@ -3,58 +3,17 @@ body
     height: 100vh;
 }
 
-.dropdown
-{
-    border-bottom: .3vw #2791f5 solid;
-    height: 90%;
-}
-
-.dropdown-button 
-{
-    color: #2791f5;
-}
-
-#accountPanel{
+#accountInfo{
     border-style: solid;
     border-color: black;
     border-radius: 1vw;
     border-width: thin;
-    background-color: #e1e0e0;
-    width: 95vw;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
+    background-color: #81c4f4;
+    width: 20vw;    
+    
 }
 
-#accountPicture {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1vh;
-    margin-top: 1vh;
-    width: 100%;
-}
-
-input[type=file]{
-    width: 0vw;
-}
-
-#accountPicture img{
-    width: 120px;
-    height:120px;
-}
-
-#accountPanel input{
-    width: 60vw;
-}
-
-#accountPanel #fname, #accountPanel #lname{
+#accountInfo{
     width: 40vw;
-} 
-
-#accountName {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    text-align: left;
 }
