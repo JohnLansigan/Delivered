@@ -171,43 +171,32 @@ body
     }
 }
 
-#messages {
+#messages{
     display: flex;
-    flex-direction: row; /* Changed to row to create columns */
-    flex-wrap: wrap;       /* Allow messages to wrap to new rows (columns) */
+    flex-wrap: wrap;  
     gap: 1rem;
-    /* Removed: justify-content: space-around;  */ /* Not needed for vertical distribution */
-    align-items: flex-start; /* Important: Align items to the start of the column */
     width: 100%;
-    height: auto;
-    align-content: flex-start; /* Distribute rows from the start */
-  }
+    justify-content: flex-start;
+    align-items: flex-start;
+}
   
-  #messages div {
+#messages div
+{
     color: white;
-    width: 30%;      /* Approximate column width */
+    width: 30%;
     background-color: #2791f5;
     border-radius: 1rem 1rem 0 1rem;
     padding: 1rem;
     word-wrap: break-word;
-    /* height: auto; */  /* Ensure height is determined by content */
-    margin-bottom: 0; /* Remove default bottom margin */
-  }
-  
-  /* Media queries to make it responsive */
-  @media (max-width: 768px) {
-    #messages {
-      flex-direction: column; /* Stack messages on smaller screens */
-      align-items: center;  /* Center the messages */
-    }
-    #messages div {
-      width: 90%; /* Take up most of the width on small screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-      #messages div{
-          width: 100%;
-      }
-  }
+    margin-bottom: 0;
+    transition: .3s;
+}
+
+#messages div:hover
+{
+    color: #2791f5;
+    background-color: white;
+}
+
+
   

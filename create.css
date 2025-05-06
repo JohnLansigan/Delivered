@@ -38,6 +38,8 @@ body
     background: none;
     font-size: large;
     transition: 0.3s;
+    width: 100%;
+    height: 100%s;
 
 }
 
@@ -63,6 +65,7 @@ h2
     color: #2791f5;
     font-size: x-large;
     outline: none;
+    width: 100%;
 }
 
 #reply-container

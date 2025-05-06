@@ -80,32 +80,33 @@
 
         <div id='messages'>
 
-        <?php
-            $servername = "127.0.0.1";
-            $username = "root";
-            $password = "";
-            $dbname = "db_delivered";
+            <?php
+                $servername = "127.0.0.1";
+                $username = "root";
+                $password = "";
+                $dbname = "db_delivered";
 
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            $sql = "SELECT message, recipient FROM tbl_messages";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<div>";
-                    echo "<p><strong>To: </strong>" . htmlspecialchars($row["recipient"]) . "</p>";
-                    echo "<p>" . htmlspecialchars($row["message"]) . "</p>";
-                    echo "</div>";
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
                 }
-            } else {
-                echo "<div>No messages yet.</div>";
-            }
-            $conn->close();
-        ?>
+
+                $sql = "SELECT messageID, message, recipient FROM tbl_messages";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $messageId = htmlspecialchars($row["messageID"]); // Sanitize the messageID
+                        echo "<div onclick='expandMessage(\"" . $messageId . "\")'>"; // Pass messageId to JS
+                        echo "<p><strong>To: " . htmlspecialchars($row["recipient"]) . "</strong></p>";
+                        echo "<p id='message-" . $messageId . "' style='display: none;'>" . htmlspecialchars($row["message"]) . "</p>"; // Use a consistent ID format
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<div>No messages yet.</div>";
+                }
+                $conn->close();
+            ?>
 
         </div>
 
@@ -148,5 +149,23 @@
             <p>TikTok</p>
         </div>
     </div>
+
+    <script>
+
+function expandMessage(clickedMessageId) {
+    console.log("Clicked message ID: " + clickedMessageId);
+    // You can now use clickedMessageId in your JavaScript function
+    var messageElement = document.getElementById("message-" + clickedMessageId); // Use the consistent ID
+    if (messageElement) {
+        if (messageElement.style.display === "none") {
+            messageElement.style.display = "block";
+        } else {
+            messageElement.style.display = "none";
+        }
+    }
+}
+
+    </script>
+
 </body>
 </html>

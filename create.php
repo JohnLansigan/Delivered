@@ -51,7 +51,7 @@
 
             <h1>New Message</h1>
             
-            <button id='cancel' onmouseover="cancelOver(event)" onmouseout="cancelOut(event)">Cancel</button>
+            <a href="index.php>"><button id='cancel' onmouseover="cancelOver(event)" onmouseout="cancelOut(event)">Cancel</button></a>
 
         </div>
 
@@ -61,7 +61,7 @@
 
             <h2>To: </h2>
 
-            <input id='recipient' type="text" placeholder='Recipient'>
+            <input id='recipient' type="text" placeholder='Recipient' maxlength=50>
 
         </div>
 
@@ -73,7 +73,7 @@
 
         </div>
 
-        <div id='message-container'>
+        <div id='message-container' onclick='clearMessage(event)'>
 
             <div id='message' onkeyup="charactersLeft(event)" contenteditable="true" maxlegnth='20'></div>
             <h2 id='delivered'>Delivered</h2>
@@ -147,9 +147,15 @@
 
     <script>
 
+        function clearMessage(event)
+        {
+            if(document.getElementById('message').innerHTML == 'Type message here')
+                document.getElementById('message').innerHTML = '';
+        }
+
         function charactersLeft(event)
         {
-            document.getElementById('characters').innerHTML = document.getElementById('message').innerText.trim().length + " / 250 characters";
+            document.getElementById('characters').innerHTML = document.getElementById('message').innerText.trim().length + " / 1000 characters";
         }
 
         function cancelOver(event) 
@@ -189,7 +195,7 @@
                 {
                     reply.innerText += replytText.charAt(x);
                     x++;
-                    setTimeout(replyPrompt, 70); // Adjust speed here (milliseconds)
+                    setTimeout(replyPrompt, 70);
                 }
             }
 
@@ -204,7 +210,7 @@
                 if (i < messageText.length) {
                     message.innerText += messageText.charAt(i);
                 i++;
-                setTimeout(messagePrompt, 70); // Adjust speed here (milliseconds)
+                setTimeout(messagePrompt, 70);
                 }
             }
 
