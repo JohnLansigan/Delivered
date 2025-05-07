@@ -16,30 +16,36 @@
 
 
 -- Dumping database structure for db_delivered
-DROP DATABASE IF EXISTS `db_delivered`;
 CREATE DATABASE IF NOT EXISTS `db_delivered` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 USE `db_delivered`;
 
+-- Dumping structure for table db_delivered.tbl_admins
+CREATE TABLE IF NOT EXISTS `tbl_admins` (
+  `adminID` int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL,
+  `dateCreated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`adminID`),
+  KEY `userID admins users` (`userID`),
+  CONSTRAINT `userID admins users` FOREIGN KEY (`userID`) REFERENCES `tbl_users` (`userID`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
 -- Dumping structure for table db_delivered.tbl_messages
-DROP TABLE IF EXISTS `tbl_messages`;
 CREATE TABLE IF NOT EXISTS `tbl_messages` (
   `messageID` int(11) NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
-  `message` varchar(250) NOT NULL,
+  `message` varchar(1000) NOT NULL,
   `recipient` varchar(50) NOT NULL,
   `dateCreated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`messageID`),
   KEY `userID messages users` (`userID`),
-  CONSTRAINT `userID messages users` FOREIGN KEY (`userID`) REFERENCES `tbl_users` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CONSTRAINT `userID messages users` FOREIGN KEY (`userID`) REFERENCES `tbl_users` (`userID`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table db_delivered.tbl_messages: ~1 rows (approximately)
-DELETE FROM `tbl_messages`;
-INSERT INTO `tbl_messages` (`messageID`, `userID`, `message`, `recipient`, `dateCreated`) VALUES
-	(7, 4, 'Bring a Chip home for Minnesota and the Philippine', 'Anthony Edwards', '2025-05-05 23:39:25');
+-- Data exporting was unselected.
 
 -- Dumping structure for table db_delivered.tbl_users
-DROP TABLE IF EXISTS `tbl_users`;
 CREATE TABLE IF NOT EXISTS `tbl_users` (
   `userID` int(11) NOT NULL AUTO_INCREMENT,
   `fname` varchar(50) NOT NULL,
@@ -49,15 +55,13 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `dateCreated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `dateUpdated` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`userID`) USING BTREE,
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table db_delivered.tbl_users: ~1 rows (approximately)
-DELETE FROM `tbl_users`;
-INSERT INTO `tbl_users` (`userID`, `fname`, `lname`, `address`, `email`, `username`, `password`, `dateCreated`) VALUES
-	(4, 'Matthew', 'Olanda', 'Delos Reyest Street', 'olandamatt@gmail.com', 'CK21GeXo', '$2y$10$DxjCSTDYG51rzZwTF1FIuOjd2mR4Pzg/pLe0MregJM4yPQbwsXkSO', '2025-05-05 23:37:04');
+-- Data exporting was unselected.
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

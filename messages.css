@@ -62,7 +62,19 @@ body
         }
     }
 
-    .admin
+    .user
+    {
+        border: none;
+        background-color: black;
+        color: lightgreen;
+        border-radius: .5rem;
+        padding: 1rem;
+        transition: .3s;
+        border: 2px lightgreen solid;
+        font-size: medium;
+    }
+
+    .date
     {
         border: none;
         background-color: black;
@@ -73,7 +85,6 @@ body
         border: 2px gray solid;
         font-size: medium;
     }
-
     .normal
     {
         border: none;

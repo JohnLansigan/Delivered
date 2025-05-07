@@ -89,8 +89,8 @@
                 echo "<div class='message-container'>";
                 echo "<div>";
                 echo "<button class='expand' onclick='expandMessage(" . $row["messageID"] . ")'>Expand</button>";
-                echo "<div class='admin'>" . htmlspecialchars($row["username"]) . "</div>";
-                echo "<div class='admin'>" . htmlspecialchars($row["dateCreated"]) . "</div>";
+                echo "<div class='user'>" . htmlspecialchars($row["username"]) . "</div>";
+                echo "<div class='date'>" . htmlspecialchars($row["dateCreated"]) . "</div>";
                 echo "<div class='".($warningCount > 0 ? "red" : "normal")."'>Warnings: " . $warningCount . "</div>";
                 echo "<button class='delete' onclick='deleteMessage(" . $row["messageID"] . ")'>Delete</button>";
                 echo "</div>";

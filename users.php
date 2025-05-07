@@ -65,7 +65,7 @@
         
         <?php
             // Fetch all users, their admin status, and the count of their messages
-            $sql = "SELECT u.userID, u.username, a.adminID, COUNT(m.messageID) AS messageCount
+            $sql = "SELECT u.userID, u.username, a.adminID, COUNT(m.messageID) AS messageCount, u.address, u.email, u.fname, u.lname, u.dateCreated, u.password, a.dateCreated AS adminCreated
                     FROM tbl_users u
                     LEFT JOIN tbl_admins a ON u.userID = a.userID
                     LEFT JOIN tbl_messages m ON u.userID = m.userID
@@ -76,16 +76,28 @@
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<div>";
-                    echo "<h3>" . htmlspecialchars($row["username"]) . "</h3>";
-
                     echo "<div>";
+                    echo "<button class='details' onclick='userDetails(" . $row["userID"] . ")'>Details</button>";
+                    echo "<div class='user'>" . htmlspecialchars($row["username"]) . "</div>"; 
                     echo "<div class='count'>" . $row["messageCount"] . " messages</div>";
-
                     if (is_null($row["adminID"])) {
                         echo "<button class='delete' onclick='deleteUser(" . $row["userID"] . ")'>Delete</button>";
                     } else {
-                        echo "<div class='admin'>Admin</div>"; // Or any other indication
+                        echo "<button class='admin'>Admin</button>"; // Or any other indication
                     }
+                    echo "</div>";
+                    echo "<div id='user-" . $row["userID"] . "' style='display: none'>";
+                        echo "<div>User ID: " . $row["userID"] . "</div>";
+                        echo "<div>First Name: " . $row["fname"] . "</div>";
+                        echo "<div>Last Name: " . $row["lname"] . "</div>";
+                        echo "<div>Username: " . $row["username"] . "</div>";
+                        echo "<div>Email: " . $row["email"] . "</div>";
+                        echo "<div>Address: " . $row["address"] . "</div>";
+                        echo "<div>Created: " . $row["dateCreated"] . "</div>";
+                        if (is_null($row["adminID"])) {
+                        } else {
+                            echo "<div>Admin Since: " . $row["adminCreated"] . "</div>";
+                        }
                     echo "</div>";
                     echo "</div>";
                 }
@@ -160,6 +172,18 @@
                     console.error('Fetch error:', error);
                     alert('Error deleting user. Please check the console.');
                 });
+            }
+        }
+
+        function userDetails(buttonElement) 
+        {
+            var userElement = document.getElementById("user-" + buttonElement); 
+            if (userElement) {
+                if (userElement.style.display === "none") {
+                    userElement.style.display = "block";
+                } else {
+                    userElement.style.display = "none";
+                }
             }
         }
     </script>

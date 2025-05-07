@@ -8,8 +8,8 @@
 {
     display: flex;
     align-items: flex-start;
-    flex-wrap: wrap;
     background-color: black;
+    flex-direction: column;
     color: white;
     height: auto;
     margin: 1rem;
@@ -31,7 +31,7 @@
 
     > div
     {
-        width: 33%;
+        width: 98%;
         align-self: center;
         padding: .5rem;
         border: 2px white solid;
@@ -40,23 +40,44 @@
         justify-content: space-between;
         align-items: center;
         height: autos;
+        flex-direction: column;
+        gap: 1rem;
 
         div
         {
             display: flex;
             gap: 1rem;
+            width: 100%;
+            border: none;
+
+            div
+            {
+                padding: .2rem;
+            }
         }
+    }
+
+    .user
+    {
+        border: none;
+        background-color: black;
+        color: white;
+        border-radius: .5rem;
+        padding: 1rem;
+        transition: .3s;
+        border: 2px white solid;
+        font-size: medium;
     }
 
     .admin
     {
         border: none;
         background-color: black;
-        color: gray;
+        color: #2791f5;
         border-radius: .5rem;
         padding: 1rem;
         transition: .3s;
-        border: 2px gray solid;
+        border: 2px #2791f5 solid;
         font-size: medium;
     }
 
@@ -70,6 +91,27 @@
         transition: .3s;
         border: 2px #2791f5 solid;
         font-size: medium;
+    }
+
+    .details
+    {
+        border: none;
+        background-color: black;
+        color: lightgreen;
+        border-radius: .5rem;
+        padding: 1rem;
+        transition: .3s;
+        border: 2px lightgreen solid;
+        font-size: medium;
+    }
+
+    .details:hover
+    {
+        cursor: pointer;
+        background-color: lightgreen;
+        border: 2px white solid;
+        color: white;
+
     }
 
     .delete
