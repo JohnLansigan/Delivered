@@ -9,49 +9,41 @@
   box-sizing: border-box;
 }
 
-
 body 
 {
   margin: 0;
-  font-family:
-  Inter,
-  -apple-system,
-  Roboto,
-  Helvetica,
-  sans-serif;
   background-color: white;
 }
 
-#hourlyMessages {
-  width: auto;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 1rem;
-  background-color: black;
-  color: white;
+#analytics-container
+{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+  justify-content: center;
+  
+  div
+  {
+    width: 49%;
+    background-color: black;
+    max-width: 900px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    background-color: black;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 #messagesPerHourChart 
 {
   width: 100% !important; /* Ensure canvas is responsive within its container */
   height: auto !important;
-}
-
-#hourlyUsers 
-{
-  width: auto;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 1rem;
-  background-color: black;
-  color: white;
 }
 
 #usersPerHourChart 
