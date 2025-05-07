@@ -21,6 +21,7 @@
                 <a href="index.php"><button id='home'>Home</button></a>
                 <a href="dashboard.php"><button id='dashboard'>Dashboard</button></a>
                 <a href="users.php"><button id='users'>Users</button></a>
+                <a href="messages.php"><button id='allMessages'>Messages</button></a>
             </div>
             <?php
                 session_name("session_delivered");
@@ -57,10 +58,48 @@
 
             <div id='activity'>
                 <h2>Activity Log</h2>
-                <canvas id="activityLog"></canvas>
+                <div id="activityLog"></div>
             </div>
 
         </div>
+
+        <div id='footer-container'>
+        <div>
+            <h2>[Delivered]</h2>
+            <p>a passion project.</p>
+            <br>
+            <br>
+            <p>© 2025 [Delivered] All rights reserved</p>
+        </div>
+        <div>
+            <h3>Links</h3>
+            <a href="index.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="terms.php">Terms</a>
+            <a href="create.php">Create</a>
+        </div>
+        <div>
+            <h3>The Project</h3>
+            <p>News</p>
+            <p>Partners</p>
+            <p>Contact Us</p>
+            <p>Contact Us</p>
+        </div>
+        <div>
+            <h3>Services</h3>
+            <p>Feedback</p>
+            <p>Report Bugs</p>
+            <p>Download</p>
+            <p>Get Help</p>
+        </div>
+        <div>
+            <h3>Socials</h3>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>TikTok</p>
+        </div>
+    </div>
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -352,40 +391,39 @@
         setInterval(fetchAndRenderTotals, 300000); //update every 5 minutes
         });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            function fetchActivityLog() {
-                fetch('activity_log.php')
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data.error) {
-                            console.error('Error fetching activity log:', data.error);
-                            document.getElementById('activityLog').innerHTML = '<div>Error loading activity log: ' + data.error + '</div>';
-                            return;
-                        }
+        document.addEventListener('DOMContentLoaded', function() {
+    function fetchActivityLog() {
+        fetch('activity_log.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const activityLogDiv = document.getElementById('activityLog');
+            activityLogDiv.innerHTML = ''; // Clear previous log
 
-                        const activityList = document.getElementById('activityLog');
-                        activityList.innerHTML = ''; // Clear previous entries
-
-                        data.forEach(event => {
-                            const eventDiv = document.createElement('div');
-                            eventDiv.textContent =  event;
-                            activityList.appendChild(eventDiv);
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error fetching activity log data:', error);
-                        document.getElementById('activityLog').innerHTML = '<div>Could not load activity log: ' + error.message + '</div>';
-                    });
+            if (!data || data.length === 0) {
+                activityLogDiv.innerHTML = "No activity yet.";
+                return;
             }
 
-            fetchActivityLog();
-            setInterval(fetchActivityLog, 30000); // Update every 30 seconds
+            data.forEach(item => {
+                const eventDiv = document.createElement('div');
+                eventDiv.innerHTML = `<p><strong>${item.event_text}</strong><br>${item.event_time}</p>`;
+                activityLogDiv.appendChild(eventDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching activity log:', error);
+            document.getElementById('activityLog').innerHTML = "Could not load activity log.";
         });
+    }
+
+    fetchActivityLog(); // Initial fetch
+    setInterval(fetchActivityLog, 30000); // Refresh every 30 seconds
+});
 
         </script>
 

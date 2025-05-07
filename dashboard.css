@@ -40,14 +40,27 @@ body
   }
 }
 
-#messagesPerHourChart 
+#activity
 {
-  width: 100% !important; /* Ensure canvas is responsive within its container */
-  height: auto !important;
-}
+  display: flex;
+  overflow-y: auto;
+  max-height: 26rem;
 
-#usersPerHourChart 
-{
-  width: 100% !important; /* Ensure canvas is responsive within its container */
-  height: auto !important;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  div
+  {
+    width: 100%;
+    padding: 0;
+    border: none;
+
+    p
+    {
+      border: 2px white solid;
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+  }
 }

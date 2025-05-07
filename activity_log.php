@@ -8,40 +8,53 @@ $password = "";
 $dbname = "db_delivered";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 if ($conn->connect_error) {
-    error_log("Database connection failed: " . $conn->connect_error); // Log the error
-    echo json_encode(['error' => "Database connection failed: " . $conn->connect_error]);
-    exit();
+    die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
 }
 
-$sql = "SELECT dateCreated AS timestamp FROM tbl_messages 
-        UNION 
-        SELECT dateCreated FROM tbl_users
+$sql = "SELECT u.username, 'account_created' AS event_type, u.dateCreated AS event_time
+        FROM tbl_users u
         UNION
-        SELECT dateCreated FROM tbl_admins
-        ORDER BY timestamp DESC
-        LIMIT 10";
+        SELECT u.username, 'admin_permissions' AS event_type, a.dateCreated AS event_time
+        FROM tbl_admins a
+        JOIN tbl_users u ON a.userID = u.userID
+        UNION
+        SELECT u.username, 'message_delivered' AS event_type, m.dateCreated AS event_time
+        FROM tbl_messages m
+        JOIN tbl_users u ON m.userID = u.userID
+        ORDER BY event_time DESC
+        LIMIT 100";
 
 $result = $conn->query($sql);
 
 if (!$result) {
-    error_log("Error executing query: " . $conn->error); // Log the query error
-    echo json_encode(['error' => "Error fetching activity log: " . $conn->error]);
-    exit();
+    die(json_encode(["error" => "Query failed: " . $conn->error]));
 }
 
-if ($result->num_rows > 0) { //check if there are rows
-    $data = [];
-    while ($row = $result->fetch_assoc()) {
-        $data[] =  $row['timestamp'];
+$data = [];
+while ($row = $result->fetch_assoc()) {
+    $username = htmlspecialchars($row["username"]);
+    $event_type = $row["event_type"];
+    $event_time = date("Y-m-d H:i:s", strtotime($row["event_time"]));
+
+    $event_text = "";
+    switch ($event_type) {
+        case 'account_created':
+            $event_text = "[{$username}] Created an account.";
+            break;
+        case 'admin_permissions':
+            $event_text = "[{$username}] Given admin permissions.";
+            break;
+        case 'message_delivered':
+            $event_text = "[{$username}] Delivered a message.";
+            break;
+        default:
+            $event_text = "[{$username}] Performed an unknown action.";
     }
-    echo json_encode($data);
-}
-else{
-    echo json_encode([]); //return empty array
+    $data[] = ["event_text" => $event_text, "event_time" => $event_time];
 }
 
+echo json_encode($data);
 
 $conn->close();
 ?>

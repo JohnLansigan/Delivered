@@ -146,8 +146,6 @@
 
     </div>
 
-   
-
     <div id='footer-container'>
         <div>
             <h2>[Delivered]</h2>

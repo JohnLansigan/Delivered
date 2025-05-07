@@ -9,9 +9,11 @@ body
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: auto;
-    width: auto;
+    min-height: 100vh;
     gap: 1rem;
+    &::-webkit-scrollbar {
+        display: none;
+      }
 }
 
 #nav-container
@@ -51,7 +53,7 @@ body
     margin: 0 10px 0 10px;
 }
 
-#home, #about, #terms, #create, #login, #dashboard, #users
+#home, #about, #terms, #create, #login, #dashboard, #users, #allMessages
 {
     height: 100%;
     width: 7vw;
@@ -81,7 +83,7 @@ a
     text-decoration: none;
 }
 
-#home:hover, #about:hover, #terms:hover, #create:hover, #user:hover, #login:hover, #dashboard:hover, #users:hover
+#home:hover, #about:hover, #terms:hover, #create:hover, #user:hover, #login:hover, #dashboard:hover, #users:hover, #allMessages:hover
 {
     background-color: #2791f5;
     color: white;
