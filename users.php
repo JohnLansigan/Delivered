@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="users.css">
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
 </head>
 <body>
@@ -87,17 +88,21 @@
                     }
                     echo "</div>";
                     echo "<div id='user-" . $row["userID"] . "' style='display: none'>";
+                        echo "<div>Created On: " . $row["dateCreated"] . "</div>";
+                        if (is_null($row["adminID"])) {
+                        } else {
+                            echo "<div>Admin Since: " . $row["adminCreated"] . "</div>";
+                        }
                         echo "<div>User ID: " . $row["userID"] . "</div>";
+                        if (is_null($row["adminID"])) {
+                        } else {
+                            echo "<div>Admin ID: " . $row["adminID"] . "</div>";
+                        }
                         echo "<div>First Name: " . $row["fname"] . "</div>";
                         echo "<div>Last Name: " . $row["lname"] . "</div>";
                         echo "<div>Username: " . $row["username"] . "</div>";
                         echo "<div>Email: " . $row["email"] . "</div>";
                         echo "<div>Address: " . $row["address"] . "</div>";
-                        echo "<div>Created: " . $row["dateCreated"] . "</div>";
-                        if (is_null($row["adminID"])) {
-                        } else {
-                            echo "<div>Admin Since: " . $row["adminCreated"] . "</div>";
-                        }
                     echo "</div>";
                     echo "</div>";
                 }
@@ -149,30 +154,57 @@
 
     <script>
         function deleteUser(userID) {
-            if (confirm("Are you sure you want to delete this user?")) {
-                fetch('delete_user.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: 'userID=' + userID
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert(data.success);
-                        window.location.reload();
-                    } else if (data.error) {
-                        alert(data.error);
-                    } else {
-                        alert('Unknown error occurred.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Fetch error:', error);
-                    alert('Error deleting user. Please check the console.');
-                });
-            }
+            Swal.fire({
+                title: 'Delete User?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'red',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Confirm'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch('delete_user.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: 'userID=' + userID
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire(
+                                'Deleted!',
+                                data.success,
+                                'success'
+                            ).then(() => {
+                                window.location.reload();
+                            });
+                        } else if (data.error) {
+                            Swal.fire(
+                                'Error!',
+                                data.error,
+                                'error'
+                            );
+                        } else {
+                            Swal.fire(
+                                'Oops!',
+                                'Unknown error occurred.',
+                                'error'
+                            );
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                        Swal.fire(
+                            'Error!',
+                            'Error deleting user. Please check the console.',
+                            'error'
+                        );
+                    });
+                }
+            })
         }
 
         function userDetails(buttonElement) 

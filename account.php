@@ -70,7 +70,10 @@
             if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
                 $user_id = $_SESSION["userID"];
                 
-                $sql = "SELECT userID, fname, lname, address, email, username, dateCreated, dateUpdated FROM tbl_users WHERE userID = ?";
+                $sql = "SELECT u.userID, u.fname, u.lname, u.address, u.email, u.username, u.dateCreated as uCreated, u.dateUpdated, a.adminID, a.dateCreated as aCreated 
+                FROM tbl_users u
+                LEFT JOIN tbl_admins a ON u.userID = a.userID
+                WHERE u.userID = ?";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("i", $user_id);
                 $stmt->execute();
@@ -78,14 +81,20 @@
                 
                 if ($result->num_rows > 0) {
                     $row = $result->fetch_assoc();
-                    echo "<div class='attribute'><strong>User ID</strong></div><div class='info'>" . $row["userID"] . "</div><button class='delete' onclick='deleteUser(" . $row["userID"] . ")'>Delete</button>";
-                    echo "<div class='attribute'><strong>Date Created</strong></div><div class='info'>" . $row["dateCreated"] . "</div>";
-                    echo "<div class='attribute'><strong>Last Updated</strong></div><div class='info'>" . $row["dateUpdated"] . "</div>";
-                    echo "<div class='attribute'><strong>Address</strong></div><div class='info'>" . $row["address"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
-                    echo "<div class='attribute'><strong>First Name</strong></div><div class='info'>" . $row["fname"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
-                    echo "<div class='attribute'><strong>Last Name</strong></div><div class='info'>" . $row["lname"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
-                    echo "<div class='attribute'><strong>Email</strong></div><div class='info'>" . $row["email"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
-                    echo "<div class='attribute'><strong>Username</strong></div><div class='info'>" . $row["username"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
+                    echo "<div class='attribute'>User ID</div><div class='info'>" . $row["userID"] . "</div><button class='delete' onclick='deleteUser(" . $row["userID"] . ")'>Delete</button>";
+                    if ($row["adminID"] != null) {
+                        echo "<div class='attribute'>Admin ID</div><div class='info'>" . $row["adminID"] . "</div>";
+                    }
+                    echo "<div class='attribute'>Date Created</div><div class='info'>" . $row["uCreated"] . "</div>";
+                    if ($row["adminID"] != null) {
+                        echo "<div class='attribute'>Admin ID</div><div class='info'>" . $row["aCreated"] . "</div>";
+                    }
+                    echo "<div class='attribute'>Last Updated</div><div class='info'>" . $row["dateUpdated"] . "</div>";
+                    echo "<div class='attribute'>Email</div><div class='info'>" . $row["email"] . "</div>";
+                    echo "<div class='attribute'>Username</div><div class='info'>" . $row["username"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
+                    echo "<div class='attribute'>First Name</div><div class='info'>" . $row["fname"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
+                    echo "<div class='attribute'>Last Name</div><div class='info'>" . $row["lname"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
+                    echo "<div class='attribute'>Address</div><div class='info'>" . $row["address"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
                 } else {
                     echo "<div class='user-info'>No user information found.</div>";
                 }
@@ -188,10 +197,28 @@
                                 });
                             } else 
                             {
-                                //if it is not username, stay on the same page.
-                                window.location.href = "account.php";
+                                Swal.fire
+                                ({
+                                    title: "Updated!",
+                                    text: 'Account has been updated.',
+                                    icon: 'success'
+                                }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = "account.php";
+                                }else{
+                                    window.location.href = "account.php";
+                                }
+                                });
                             }
-                        } else {
+                        } else if (xhr.responseText === "username_taken") {
+                            Swal.fire({
+                                title: 'Not Updated!',
+                                text: 'Username is already taken.',
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                            infoDiv.textContent = currentText; // revert
+                        }else {
                             alert("Failed to update. Please try again.");
                             infoDiv.textContent = currentText; // revert to old text
                         }
@@ -215,7 +242,7 @@
 
         function deleteUser(userID) {
             Swal.fire({
-                title: 'Are you sure?',
+                title: 'Delete User?',
                 text: "You won't be able to revert this!",
                 icon: 'warning',
                 showCancelButton: true,

@@ -80,7 +80,7 @@
 
             <h1>New Message</h1>
             
-            <a href="index.php"><button id='cancel' onmouseover="cancelOver(event)" onmouseout="cancelOut(event)">Cancel</button></a>
+            <a><button id='cancel' onmouseover="cancelOver(event)" onmouseout="cancelOut(event)">Cancel</button></a>
 
         </div>
 
@@ -104,7 +104,7 @@
 
         <div id='message-container' onclick='clearMessage(event)'>
 
-            <div id='message' onkeyup="charactersLeft(event)" contenteditable="false"></div>
+            <div id='message' onkeyup="charactersLeft(event)" contenteditable="false"> </div>
             <h2 id='delivered'>Delivered</h2>
 
         </div>
@@ -113,7 +113,7 @@
 
             <div id='prompt'>
                 <div id='characters'>0 characters</div>
-                <button id='send' onmouseover="sendOver(event)" onmouseout="sendOut(event)">↑</button>
+                <button id='send' onmouseover="sendOver(event)" onmouseout="sendOut(event)" disabled>↑</button>
             </div>     
 
         </div>
@@ -178,8 +178,9 @@
 
         function clearMessage(event)
         {
-            if(document.getElementById('message').innerHTML == 'Type message here')
+            if(document.getElementById('message').innerHTML == ' Type message here')
                 document.getElementById('message').innerHTML = '';
+                document.getElementById("message").focus();
         }
 
         function charactersLeft(event)
@@ -211,20 +212,18 @@
             document.body.style.backgroundColor = "#8e8e93";
         }
 
-        function prompts()
+        function prompts() 
         {
-
             let reply = document.getElementById("reply");
             let replytText = "What's on your mind?";
             let x = 0;
+            let replyTimeoutId; // Store the timeout ID
 
-            function replyPrompt() 
-            {
-                if (x < replytText.length) 
-                {
+            function replyPrompt() {
+                if (x < replytText.length) {
                     reply.innerText += replytText.charAt(x);
                     x++;
-                    setTimeout(replyPrompt, 70);
+                    replyTimeoutId = setTimeout(replyPrompt, 70); // Store the ID
                 }
             }
 
@@ -233,84 +232,126 @@
             let message = document.getElementById("message");
             let messageText = "Type message here";
             let i = 0;
+            let messageTimeoutId; // Store the timeout ID
 
-            function messagePrompt() 
-            {
+            function messagePrompt() {
                 if (i < messageText.length) {
                     message.innerText += messageText.charAt(i);
-                i++;
-                setTimeout(messagePrompt, 70);
-                }
-                else
-                {
+                    i++;
+                    messageTimeoutId = setTimeout(messagePrompt, 70); // Store the ID
+                } else {
                     document.getElementById("message").contentEditable = true;
+                    document.getElementById("send").disabled = false;
                 }
             }
 
-            setTimeout(messagePrompt, 2500);
+            setTimeout(messagePrompt, 2000);
+
+            
 
         }
 
-        document.getElementById("send").addEventListener("click", function (e) {
-    e.preventDefault();
 
-    const message = document.getElementById("message").innerText.trim();
-    const recipient = document.getElementById("recipient").value.trim();
+    document.getElementById("send").addEventListener("click", function (e) {
+        e.preventDefault();
 
-    if (!message || message === "Type message here" || !recipient) 
-    {
-        Swal.fire
-        ({
-            title: 'Invalid Message!',
-            text: 'Both the message and recipient are required',
-            icon: 'error',
-            confirmButtonText: 'Reload Page'
-        })
-    }
+        const message = document.getElementById("message").innerText.trim();
+        const recipient = document.getElementById("recipient").value.trim();
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "submit_message.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        if ((!message || message.trim() === "Type message here") && !recipient) {
+            Swal.fire({
+                title: 'Undelivered!',
+                text: 'Both the message and recipient are blank.',
+                icon: 'error',
+                confirmButtonText: 'OK' // Changed to OK
+            });
+            return; // Stop execution
+        }
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) 
-            {
-                Swal.fire
-                ({
-                    title: "Delivered!",
-                    icon: 'success',
-                    showDenyButton: true,
-                    confirmButtonText: "View Message",
-                    denyButtonText: `Send Another`
-                }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "index.php";
-                } else if (result.isDenied) {
-                    window.location.href = "create.php";
-                }
-                });
-            } 
-            else 
-            {
-                Swal.fire
-                ({
-                    title: 'Failed to Deliver!',
-                    icon: 'error',
-                    confirmButtonText: 'Reload Page'
-                }).then((result) => {
-                    if (result.isConfirmed) 
-                    {
+        if (!message || message.trim() === "Type message here") {
+            Swal.fire({
+                title: 'Undelivered!',
+                text: 'The message is blank.',
+                icon: 'error',
+                confirmButtonText: 'OK' // Changed to OK
+            });
+            return; // Stop execution
+        }
+
+        if (!recipient) {
+            Swal.fire({
+                title: 'Undelivered!',
+                text: 'The recipient is blank.',
+                icon: 'error',
+                confirmButtonText: 'OK' // Changed to OK
+            });
+            return; // Stop execution
+        }
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "submit_message.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) 
+                {
+                    Swal.fire
+                    ({
+                        title: "Delivered!",
+                        icon: 'success',
+                        showDenyButton: true,
+                        confirmButtonText: "View Message",
+                        denyButtonText: `Send Another`,
+                        confirmButtonColor: "#2791f5",
+                        denyButtonColor: `lightgreen`
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "index.php";
+                    } else if (result.isDenied) {
                         window.location.href = "create.php";
                     }
-                });
+                    });
+                } 
+                else 
+                {
+                    Swal.fire
+                    ({
+                        title: 'Failed to Deliver!',
+                        icon: 'error',
+                        confirmButtonText: 'Reload Page'
+                    }).then((result) => {
+                        if (result.isConfirmed) 
+                        {
+                            window.location.href = "create.php";
+                        }
+                    });
+                }
             }
-        }
-    };
-
+        };
         const params = `message=${encodeURIComponent(message)}&recipient=${encodeURIComponent(recipient)}`;
         xhr.send(params);
     });
+
+        document.getElementById("cancel").addEventListener("click", function (e) 
+        {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Discard Message?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'red',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Confirm',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "index.php";
+                }
+            });
+        });
 
     </script>
     

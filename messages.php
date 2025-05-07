@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="messages.css">
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
 </head>
 
@@ -73,7 +74,7 @@
 
         if ($result->num_rows > 0) {
 
-            $bannedWords = array("hell","frick","stupid","idiot");
+            $bannedWords = array("frick","stupid","idiot");
             
             while ($row = $result->fetch_assoc()) {
 
@@ -155,30 +156,57 @@
 
     <script>
         function deleteMessage(messageID) {
-            if (confirm("Are you sure you want to delete this message?")) {
-                fetch('delete_message.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: 'messageID=' + messageID
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert(data.success);
-                        window.location.reload();
-                    } else if (data.error) {
-                        alert(data.error);
-                    } else {
-                        alert('Unknown error occurred.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Fetch error:', error);
-                    alert('Error deleting message. Please check the console.');
-                });
-            }
+            Swal.fire({
+                title: 'Delete Message?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'red',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Confirm'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch('delete_message.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: 'messageID=' + messageID
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire(
+                                'Deleted!',
+                                data.success,
+                                'success'
+                            ).then(() => {
+                                window.location.reload();
+                            });
+                        } else if (data.error) {
+                            Swal.fire(
+                                'Error!',
+                                data.error,
+                                'error'
+                            );
+                        } else {
+                            Swal.fire(
+                                'Oops!',
+                                'Unknown error occurred.',
+                                'error'
+                            );
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                        Swal.fire(
+                            'Error!',
+                            'Error deleting message. Please check the console.',
+                            'error'
+                        );
+                    });
+                }
+            })
         }
 
         function expandMessage(buttonElement) 

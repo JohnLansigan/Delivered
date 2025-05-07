@@ -28,6 +28,19 @@ if (isset($_POST["attribute"]) && isset($_POST["value"]) && isset($_POST["userID
             $sql = "UPDATE tbl_users SET address = ?, dateUpdated = CURRENT_TIMESTAMP WHERE userID = ?";
             break;
         case "Username":
+            // Check if the username is already taken (excluding the current user)
+            $checkSql = "SELECT userID FROM tbl_users WHERE username = ? AND userID != ?";
+            $checkStmt = $conn->prepare($checkSql);
+            $checkStmt->bind_param("si", $value, $userID);
+            $checkStmt->execute();
+            $checkResult = $checkStmt->get_result();
+
+            if ($checkResult->num_rows > 0) {
+                echo "username_taken"; // Send this specific error back to JS
+                $conn->close();
+                exit();
+            }
+            $checkStmt->close();
             $sql = "UPDATE tbl_users SET username = ?, dateUpdated = CURRENT_TIMESTAMP WHERE userID = ?";
             break;
         default:
@@ -42,12 +55,12 @@ if (isset($_POST["attribute"]) && isset($_POST["value"]) && isset($_POST["userID
     if ($stmt->execute()) {
         echo "success"; // Send a success message back to the JavaScript
     } else {
-        echo "Error updating record: " . $stmt->error;
+        echo "Error updating record: " . $stmt->error; //send error
     }
 
     $stmt->close();
 } else {
-    echo "Invalid data received"; //  Send an error message back to the JavaScript
+    echo "Invalid data received"; //   Send an error message back to the JavaScript
 }
 $conn->close();
 ?>
