@@ -1,19 +1,95 @@
-body
+.dropdown
 {
-    height: 100vh;
+    border-bottom: 4px #2791f5 solid;
+    color: #2791f5;
+    margin-top: -4px;
 }
 
-#accountInfo{
-    border-style: solid;
-    border-color: black;
-    border-radius: 1vw;
-    border-width: thin;
-    background-color: #81c4f4;
-    width: 20vw;    
-    
-}
+#info-container
+{
+    background-color: black;
+    margin: 1rem;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
 
-#accountInfo{
-    width: 40vw;
-    text-align: left;
+    h1
+    {
+        width: 100%;
+    }
+
+    .attribute
+    {
+        border: 2px #2791f5 solid;
+        background-color: #2791f5;
+        border-radius: .5rem;
+        padding: .5rem;
+        width: 15%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .info
+    {
+        border: 2px white solid;
+        border-radius: .5rem;
+        padding: .5rem;
+        width: 75%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        outline: none;
+    }
+
+    .info:focus
+    {
+        border: 2px #2791f5 solid;
+    }
+
+    button
+    {
+        padding: .5rem;
+        background-color: black;
+        color: lightgreen;
+        border: 2px lightgreen solid;
+        border-radius: .5rem;
+        transition: .3s;
+        width: 5%;
+    }
+
+    button:hover
+    {
+        padding: .5rem;
+        background-color: lightgreen;
+        color: white;
+        border: 2px white solid;
+        border-radius: .5rem;
+        cursor: pointer;
+    }
+
+    .delete
+    {
+        padding: .5rem;
+        background-color: black;
+        color: red;
+        border: 2px red solid;
+        border-radius: .5rem;
+        transition: .3s;
+        width: 5%;
+    }
+
+    .delete:hover
+    {
+        padding: .5rem;
+        background-color: red;
+        color: white;
+        border: 2px white solid;
+        border-radius: .5rem;
+        cursor: pointer;
+    }
 }

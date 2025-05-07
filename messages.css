@@ -16,13 +16,12 @@ body
     flex-wrap: wrap;
     background-color: black;
     color: white;
-    height: auto;
     margin: 1rem;
     gap: 1rem;
     padding: 1rem;
     border-radius: 1rem;
     overflow-y: auto;
-    height: 70vh;
+    max-height: 70vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
     &::-webkit-scrollbar {
@@ -44,7 +43,7 @@ body
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        height: autos;
+        height: auto;
         flex-direction: column;
         gap: 1rem;
 
@@ -94,6 +93,30 @@ body
         padding: 1rem;
         transition: .3s;
         border: 2px gray solid;
+        font-size: medium;
+    }
+
+    .yellow
+    {
+        border: none;
+        background-color: black;
+        color: yellow;
+        border-radius: .5rem;
+        padding: 1rem;
+        transition: .3s;
+        border: 2px yellow solid;
+        font-size: medium;
+    }
+
+    .orange
+    {
+        border: none;
+        background-color: black;
+        color: orange;
+        border-radius: .5rem;
+        padding: 1rem;
+        transition: .3s;
+        border: 2px orange solid;
         font-size: medium;
     }
 

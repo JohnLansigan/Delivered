@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="account.css">
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
- 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div id='nav-container'>
@@ -61,23 +61,42 @@
         }
         ?>
     </div>
-    
-    <Center>
-        <div id="accountInfo">
-        
-            <h2><center>Account Information</center></h2>
-    <!--fname lname username email address passsword -->        
-    </Center>
-                <div id = "accountText">
-                <p id ="accountText"><h3>Full Name: <h3> <p></p>
-                <h3>Username: <h3> <p></p>
-                <h3>Email: <h3> <p></p>
-                <h3>Address: <h3> <p></p>
-                <h3>Password: <h3> <p></p></p>
-    </div>
-    </div>
 
-    
+    <div id='info-container'>
+
+        <h1>Account Information</h1>
+
+        <?php
+            if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
+                $user_id = $_SESSION["userID"];
+                
+                $sql = "SELECT userID, fname, lname, address, email, username, dateCreated, dateUpdated FROM tbl_users WHERE userID = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("i", $user_id);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    echo "<div class='attribute'><strong>User ID</strong></div><div class='info'>" . $row["userID"] . "</div><button class='delete' onclick='deleteUser(" . $row["userID"] . ")'>Delete</button>";
+                    echo "<div class='attribute'><strong>Date Created</strong></div><div class='info'>" . $row["dateCreated"] . "</div>";
+                    echo "<div class='attribute'><strong>Last Updated</strong></div><div class='info'>" . $row["dateUpdated"] . "</div>";
+                    echo "<div class='attribute'><strong>Address</strong></div><div class='info'>" . $row["address"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
+                    echo "<div class='attribute'><strong>First Name</strong></div><div class='info'>" . $row["fname"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
+                    echo "<div class='attribute'><strong>Last Name</strong></div><div class='info'>" . $row["lname"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
+                    echo "<div class='attribute'><strong>Email</strong></div><div class='info'>" . $row["email"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
+                    echo "<div class='attribute'><strong>Username</strong></div><div class='info'>" . $row["username"] . "</div><button onclick='editAttribute(this)'>Edit</button>";
+                } else {
+                    echo "<div class='user-info'>No user information found.</div>";
+                }
+                $stmt->close();
+            } else {
+                echo "<div class='user-info'>Please log in to view your account information.</div>";
+            }
+            $conn->close();
+        ?>
+
+    </div>
     
     <div id='footer-container'>
         <div>
@@ -116,5 +135,139 @@
             <p>TikTok</p>
         </div>
     </div>
+
+    <script>
+        function editAttribute(element) {
+            // Get the parent div of the button, which contains the attribute and info
+            const infoDiv = element.previousElementSibling;
+            const attributeDiv = infoDiv.previousElementSibling;
+
+            // Store the current text and remove the edit button
+            const currentText = infoDiv.textContent;
+            infoDiv.contentEditable = "true";
+            infoDiv.focus(); // Make it immediately editable
+            element.style.display = "none"; // Hide the edit button
+
+            // Create a save button
+            const saveButton = document.createElement("button");
+            saveButton.textContent = "Save";
+            saveButton.onclick = function() {
+                // Get the new text
+                const newText = infoDiv.textContent;
+
+                // Revert to non-editable and update the text
+                infoDiv.contentEditable = "false";
+                // infoDiv.textContent = newText; // Removed: We'll update with PHP
+
+                // Show the edit button again and remove the save button
+                element.style.display = "";
+                saveButton.remove();
+
+                // Use AJAX to send the updated data to the server
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "update_account.php", true); // Create a new php file called update_account.php
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Handle the response from the server (optional)
+                        console.log(xhr.responseText);
+                        // Update the HTML only if the server confirms success
+                        if (xhr.responseText === "success") {
+
+                            if (attributeDiv.textContent.includes("Username")) 
+                            {
+                                fetch('logout.php')
+                                .then(response => {
+                                    // Only redirect to login.php after logout.php is done
+                                    window.location.href = "login.php";
+                                })
+                                .catch(error => {
+                                    console.error("Error during logout:", error);
+                                    // Even if logout.php fails, you might still want to redirect to login
+                                    window.location.href = "login.php";
+                                });
+                            } else 
+                            {
+                                //if it is not username, stay on the same page.
+                                window.location.href = "account.php";
+                            }
+                        } else {
+                            alert("Failed to update. Please try again.");
+                            infoDiv.textContent = currentText; // revert to old text
+                        }
+                    }
+                };
+                const attributeName = attributeDiv.textContent; // Remove the colon
+                const data = "attribute=" + encodeURIComponent(attributeName) + "&value=" + encodeURIComponent(newText) + "&userID=" + <?php echo $_SESSION["userID"]; ?>; //add the userID
+                xhr.send(data);
+            };
+            // Insert the save button after the infoDiv
+            element.parentNode.insertBefore(saveButton, element.nextSibling);
+
+            //handle the enter key
+            infoDiv.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); //prevent a newline
+                    saveButton.click(); //trigger save
+                }
+            });
+        }
+
+        function deleteUser(userID) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'red',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Confirm'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch('delete_user.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: 'userID=' + userID
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your account has been deleted.',
+                                'success'
+                            ).then(() => {
+                                 window.location.href = "logout.php";
+                            });
+                           
+                        } else if (data.error) {
+                            Swal.fire(
+                                'Error',
+                                data.error,
+                                'error'
+                            );
+                        } else {
+                            Swal.fire(
+                                'Error',
+                                'Unknown error occurred.',
+                                'error'
+                            );
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                        Swal.fire(
+                            'Error',
+                            'Error deleting user. Please check the console.',
+                            'error'
+                        );
+                    });
+                }
+            })
+        }
+    </script>
+
 </body>
 </html>

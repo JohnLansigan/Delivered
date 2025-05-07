@@ -73,7 +73,7 @@
 
         if ($result->num_rows > 0) {
 
-            $bannedWords = array("fuck", "shit", "bitch", "cunt", "faggot");
+            $bannedWords = array("hell","frick","stupid","idiot");
             
             while ($row = $result->fetch_assoc()) {
 
@@ -91,10 +91,20 @@
                 echo "<button class='expand' onclick='expandMessage(" . $row["messageID"] . ")'>Expand</button>";
                 echo "<div class='user'>" . htmlspecialchars($row["username"]) . "</div>";
                 echo "<div class='date'>" . htmlspecialchars($row["dateCreated"]) . "</div>";
-                echo "<div class='".($warningCount > 0 ? "red" : "normal")."'>Warnings: " . $warningCount . "</div>";
+                $messageType = "normal";
+                if ($warningCount > 0) {
+                    $messageType = "yellow";
+                }
+                if ($warningCount > 2) {
+                    $messageType = "orange";
+                }
+                if ($warningCount > 4) {
+                    $messageType = "red";
+                }
+                echo "<div class='" . $messageType . "'>Warnings: " . $warningCount . "</div>";
                 echo "<button class='delete' onclick='deleteMessage(" . $row["messageID"] . ")'>Delete</button>";
                 echo "</div>";
-                echo "<p id='message-" . $row["messageID"] . "' style='display: none'><strong>To: " . htmlspecialchars($row["recipient"]) . "</strong><br><br>" . htmlspecialchars($row["message"]) . "</p>";
+                echo "<p id='message-" . $row["messageID"] . "' style='display: none'><strong>To: " . htmlspecialchars($row["recipient"]) . "</strong><br>" . htmlspecialchars($row["message"]) . "</p>";
                 echo "</div>";
             }
         } else {
