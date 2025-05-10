@@ -71,11 +71,11 @@
         }
         ?>
     </div>
-    <br><br>
+    
 
     <div class='main-container'>
 
-        <p><h1>Terms of Submission</h1><br><br><br>
+        <p><h1>Terms of Submission</h1><br>
         <h3>By clicking on the agree buttton:</h3><br>
 
         <ol>
@@ -121,7 +121,7 @@
             </li>
         </ol><br><br><br>
 
-        <h1>Terms of Use</h1><br><br><br>
+        <h1>Terms of Use</h1><br>
         <h2>Content</h2>
         
         <ul><li>You are responsible for your use of the Services and for any Content you provide, including compliance with applicable laws, rules, 
@@ -166,7 +166,7 @@
         the revised Terms.
         </li></ul><br><br><br>
 
-        <h1>Privacy Policy</h1><br><br><br>
+        <h1>Privacy Policy</h1><br>
         <h2>Data Collection</h2>
         <ul><li>
             We collect technical data, profile data, content, and other data received from you, your organization and other third party sources. 

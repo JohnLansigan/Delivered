@@ -34,6 +34,10 @@ body
     margin-bottom: 5%;
     
 }
+
+.desc2 h3{
+    font-weight: normal;
+}
 .desc1 h1
 {
     font-size: 5vw;
@@ -77,8 +81,6 @@ h2{
     margin: auto;
     
 }
-
-
 
 #aboutUsTitle{
     background-color: #418ABF;

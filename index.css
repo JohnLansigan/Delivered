@@ -96,12 +96,13 @@ body
     height: 2rem;
     width: 2rem;
     border-radius: 100%;
+}
 
-    h2
+#numbers h2
     {
         color: white;
     }
-}
+
 
 #steps
 {
@@ -217,3 +218,43 @@ body
         color: white;
     }
 }  
+
+@media screen and (max-width: 768px) {
+    #numbers h2{
+        margin-top: .3vh;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    #intro-container h1 {
+        font-size:7vw;
+    }
+    #works h1{
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    #intro-container h1 {
+        font-size: 13vw;
+    }
+    #works h1{
+        font-size: 6vw;
+    }
+    #numbers {
+        height: 2.5vh;
+        width: 9vw;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    #intro-container {
+        margin-top: -20vw;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #intro-container {
+        margin-top: -25vw;
+    }
+}

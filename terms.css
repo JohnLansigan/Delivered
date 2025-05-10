@@ -79,3 +79,27 @@ ol,ul,p{
   background-color: #298e46;
   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
+
+@media screen and (max-width: 426px) {
+    .main-container{
+      padding: 1em;
+    }
+    li{
+      font-size: .8em;
+    }
+    h1 {
+      font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .main-container{
+      padding: 1em;
+    }
+    li{
+      font-size: .75em;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+}
