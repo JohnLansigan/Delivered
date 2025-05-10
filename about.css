@@ -7,7 +7,7 @@
 
 body
 {
-    background-color: #559dd0;
+    background-color: #231278;
     margin: 0;
 }   
 
@@ -208,7 +208,8 @@ h2{
 }
 
 .carousel img {
-    height: 500px;
+    height: 300px;
+    border-radius: 15px;
     object-fit: cover;
     margin-left: 14px;
     width: calc(100%/3);

@@ -84,26 +84,26 @@
             <center><div class = "wrapper">
                 <i id="left" class = "fa-solid fa-angle-left"></i>
                 <div class = "carousel">
-                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
-                    <img src = "woman.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
-                    <img src = "woman.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
-                    <img src = "woman.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
-                    <img src = "woman.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "placeholder.jpg" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt1.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt2.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt3.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt4.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt1.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt2.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt3.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt4.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt1.png" alt = "img" height = "500px" width = "500px">
                 </div>
                 <i id = "right" class = "fa-solid fa-angle-right"></i>
             </div></center>
             
-            <br><br><div class = "desc2"><h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
+            <br><br><div class = "desc2"><h3><center>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</center></h3>
         </p>
     </div><br><br>
 
     <div id="panel1">
         <div id="aboutUsPic">
-            <img id='ourPic' src="placeholder.jpg" alt="placeholder.jpg" height = "100%" width = "300px">
+            <img id='ourPic' src="aboutPic.jpg" alt="placeholder.jpg" height = "100%" width = "300px">
         </div>
         <div class="aboutUsText">
             <center>
@@ -121,7 +121,7 @@
         <div class="aboutUsText">
             <center>
                 <div id="aboutUsTitle">
-                    <Center><h2>About Us</h2></Center>
+                    <Center><h2>For You</h2></Center>
                 </div>
                 <br>
 
