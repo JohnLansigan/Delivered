@@ -103,7 +103,7 @@
 
     <div id="panel1">
         <div id="aboutUsPic">
-            <img id='ourPic' src="aboutPic.jpg" alt="placeholder.jpg" height = "100%" width = "300px">
+            <img id='ourPic' src="aboutPic.jpg" alt="img" height = "100%" width = "450px">
         </div>
         <div class="aboutUsText">
             <center>
@@ -129,7 +129,7 @@
             </center>
         </div>
         <div id="aboutUsPic">
-            <img id='ourPic' src="placeholder.jpg" alt="placeholder.jpg" height = "100%" width = "300px">
+            <img id='ourPic' src="forYouPic.jpg" alt="placeholder.jpg" height = "100%" width = "500px">
         </div>
     </div>
     <br>
@@ -137,7 +137,7 @@
     <center>
     <div id="joinPanel">
         <div id="joinPanelLogo">
-            <img id='ourPic' src="placeholder.jpg" alt="placeholder.jpg" height = "120px" width = "120px">
+            <img id='ourPic' src="favicon.png" alt="placeholder.jpg" height = "120px" width = "120px">
         </div>
         <h1>Join us in a space where anonymous words<br>are delivered with meaning.</h1>
         <br>
