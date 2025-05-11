@@ -4,6 +4,11 @@
     color: #2791f5;
 }
 
+body
+{
+    justify-content: flex-start;
+}
+
 #users-container
 {
     display: flex;
@@ -17,7 +22,7 @@
     padding: 1rem;
     border-radius: 1rem;
     overflow-y: auto;
-    max-height: 60vh;
+    max-height: 85vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
     &::-webkit-scrollbar {

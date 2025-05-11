@@ -14,6 +14,7 @@
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
+    
     <style>
         .error-message {
             color: red;
@@ -100,11 +101,9 @@
 
         <div>
             <input type="checkbox" id="accept" name="accept" required onchange="validateAccept()">
-            <label for="accept">By signing up you agree to our <a href="terms.php">Terms and conditions</a></label>
+            <label for="accept">By signing up you agree to our <a>Terms and conditions</a></label>
             <div id="accept-error" class="error-message"></div>
         </div>
-
-        
 
         <button type="submit">Sign Up</button>
 

@@ -116,44 +116,6 @@
 
     </div>
 
-    <div id='footer-container'>
-        <div>
-            <h2>[Delivered]</h2>
-            <p>a passion project.</p>
-            <br>
-            <br>
-            <p>© 2025 [Delivered] All rights reserved</p>
-        </div>
-        <div>
-            <h3>Links</h3>
-            <a href="index.php">Home</a>
-            <a href="about.php">About</a>
-            <a href="terms.php">Terms</a>
-            <a href="create.php">Create</a>
-        </div>
-        <div>
-            <h3>The Project</h3>
-            <p>News</p>
-            <p>Partners</p>
-            <p>Contact Us</p>
-            <p>Contact Us</p>
-        </div>
-        <div>
-            <h3>Services</h3>
-            <p>Feedback</p>
-            <p>Report Bugs</p>
-            <p>Download</p>
-            <p>Get Help</p>
-        </div>
-        <div>
-            <h3>Socials</h3>
-            <p>Instagram</p>
-            <p>Facebook</p>
-            <p>Twitter</p>
-            <p>TikTok</p>
-        </div>
-    </div>
-
     <script>
         function deleteMessage(messageID) {
             Swal.fire({
