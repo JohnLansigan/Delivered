@@ -7,7 +7,8 @@
 
 body
 {
-    background-color: #559dd0;
+    background-color: #231278;
+    background-image:url("bgPattern.png");
     margin: 0;
 }   
 
@@ -32,6 +33,10 @@ body
     font-family: sans-serif;
     margin-bottom: 5%;
     
+}
+
+.desc2 h3{
+    font-weight: normal;
 }
 .desc1 h1
 {
@@ -59,7 +64,7 @@ h2{
     width: 75vw;
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
 }
 
 #panel2{
@@ -67,7 +72,7 @@ h2{
     width: 75vw;
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
 }
 
 #aboutUsPic{
@@ -77,10 +82,8 @@ h2{
     
 }
 
-
-
 #aboutUsTitle{
-    background-color: #418ABF;
+    background-color: #3a2899;
     height: 6.5vh;
     display: flex;
     flex-direction: column;
@@ -95,7 +98,6 @@ h2{
     width: 40vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin: auto;
 
 
@@ -105,15 +107,19 @@ h2{
 {
     margin-left: 10%;
     margin-right: 10%;
+    text-align: justify;
+    font-weight: normal;
 }
 
 #joinPanel {
+    background-image: linear-gradient(#3a2899, black);
     background-color: #000000;
     border-radius: 8px;
     width: 75vw;
     padding: 5rem 0 1.5rem;
     position: relative;
     margin-top:8vh;
+    margin-bottom: -3%;
 }
 
 #joinPanel h1{
@@ -131,13 +137,13 @@ h2{
 .signupButton
 {
     color: white;
-    background-color: #2791f5;
+    background-color: #3a2899;
     border: none;
     padding: 1%;
     border-radius: 15px;
     transition: .3s;
     cursor: pointer;
-    border: 2px #2791f5 solid;
+    border: 2px #3a2899 solid;
 
     h2
     {
@@ -208,7 +214,8 @@ h2{
 }
 
 .carousel img {
-    height: 500px;
+    height: 300px;
+    border-radius: 15px;
     object-fit: cover;
     margin-left: 14px;
     width: calc(100%/3);

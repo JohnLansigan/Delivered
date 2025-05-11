@@ -71,11 +71,11 @@
         }
         ?>
     </div>
-    <br><br>
+    
 
     <div class='main-container'>
 
-        <p><h1>Terms of Submission</h1><br><br><br>
+        <p><h1>Terms of Submission</h1><br>
         <h3>By clicking on the agree buttton:</h3><br>
 
         <ol>
@@ -85,7 +85,7 @@
             an account in order to create a submission. You may edit or delete a submission you sent within 24 hours of submission. 
             Otherwise, you cannot edit or delete this message anymore and only view them. It is at the administrators discretion to 
             delete any account or submissions they deem inappropriate. You agree to be bound by the Terms of Use and Privacy Policy 
-            for the Unsent Project and affiliated entities.
+            for the [Delivered] Website and affiliated entities.
             </li><br>
             <li>
             <b>You warrant that you have all necessary licenses and permissions to submit this content and have it posted.</b> You represent and 
@@ -121,7 +121,7 @@
             </li>
         </ol><br><br><br>
 
-        <h1>Terms of Use</h1><br><br><br>
+        <h1>Terms of Use</h1><br>
         <h2>Content</h2>
         
         <ul><li>You are responsible for your use of the Services and for any Content you provide, including compliance with applicable laws, rules, 
@@ -166,7 +166,7 @@
         the revised Terms.
         </li></ul><br><br><br>
 
-        <h1>Privacy Policy</h1><br><br><br>
+        <h1>Privacy Policy</h1><br>
         <h2>Data Collection</h2>
         <ul><li>
             We collect technical data, profile data, content, and other data received from you, your organization and other third party sources. 
@@ -215,12 +215,6 @@
 
 
         <center><a href = "signup.php"><button class = "signupButton">To signup</button></a></center>
-
-
-        <br><br><br>
-
-        <center><b>Contact us: 09123456789</b></center>
-        <center><b>Email us: <a href = "https://gmail.com:">deliveredwebsite@rocketmail.com</a></b></center>
 
         
 

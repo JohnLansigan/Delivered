@@ -1,3 +1,8 @@
+body{
+    background-image: url("loginBG2.png");
+}
+
+
 #login
 {
     border-bottom: 4px #2791f5 solid;
@@ -114,4 +119,9 @@ hr
 .error-message
 {
     width: 48%;
+}
+
+body.swal2-shown {
+    overflow: hidden !important;
+    padding-right: 0 !important; /* To prevent a jump from scrollbar disappearing */
 }
