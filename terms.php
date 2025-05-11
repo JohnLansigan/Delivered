@@ -31,7 +31,7 @@
                 session_name("session_delivered");
                 session_start();
 
-                $servername = "localhost:3307";
+                $servername = "127.0.0.1";
                 $username = "root";
                 $password = "";
                 $dbname = "db_delivered";
