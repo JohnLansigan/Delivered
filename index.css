@@ -8,7 +8,7 @@ body
 {
     height: auto;
     width: auto;
-    background-color: white;
+    background-image: url("dot-grid.png");
     margin:0;
     display: flex;
     gap: 0;
