@@ -120,3 +120,8 @@ hr
 {
     width: 48%;
 }
+
+body.swal2-shown {
+    overflow: hidden !important;
+    padding-right: 0 !important; /* To prevent a jump from scrollbar disappearing */
+}
