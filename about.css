@@ -26,17 +26,19 @@ body
 .desc2
 {
     margin:0 auto;
-    width: 75vw;    
+    width: 65vw;    
     color: #ecece1;
     justify-content: center;
-    align-items: center;
+    text-align: center;
     font-family: sans-serif;
     margin-bottom: 5%;
+    display: flex;
     
 }
 
 .desc2 h3{
     font-weight: normal;
+    font-size: 1.4em;
 }
 .desc1 h1
 {
@@ -49,7 +51,7 @@ body
     font-size: 5vh;
 }
 
-#panel1 h3, .desc h3
+#panel1 h3, .desc h3, #panel2 h3
 {
     text-align: justify;
     font-weight: normal;
@@ -62,22 +64,20 @@ h2{
 #panel1{
     margin: 0 auto;
     width: 75vw;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
     margin-bottom: 3%;
 }
 
 #panel2{
     margin: 0 auto;
     width: 75vw;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
     margin-bottom: 3%;
 }
 
 #aboutUsPic{
-    height: 100%;   
-    
+    height: 100%;  
+    width: 37.5vw; 
     margin: auto;
     
 }
@@ -95,15 +95,24 @@ h2{
 .aboutUsText{
     color:#ecece1;
     height: 30vh;
-    width: 40vw;
+    width: 37.5vw;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     margin: auto;
-
-
 }
 
-.aboutUsText h3
+.aboutUsText2{
+    color:#ecece1;
+    height: 30vh;
+    width: 37.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.aboutUsText h3, .aboutUsText2 h3
 {
     margin-left: 10%;
     margin-right: 10%;
@@ -118,7 +127,7 @@ h2{
     width: 75vw;
     padding: 5rem 0 1.5rem;
     position: relative;
-    margin-top:8vh;
+    margin-top: 6vh;
     margin-bottom: -3%;
 }
 
@@ -214,8 +223,8 @@ h2{
 }
 
 .carousel img {
-    height: 300px;
-    border-radius: 15px;
+    height: 320px;
+    border-radius: 12px;
     object-fit: cover;
     margin-left: 14px;
     width: calc(100%/3);
@@ -226,11 +235,88 @@ h2{
     margin-left: 0px;
 }
 
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        max-width: 800px;
+    }
+
+    h3{
+        font-size: 1em;
+    }
+
+    #aboutUsPic #ourPic{
+        height: 20vh;
+    }
+
+    #aboutUsTitle{
+        height: 4vh;
+        width: 25vw;
+    }
+
+    .desc2, #panel1, #panel2{
+        margin-bottom: 0%;
+    }
+
+    #joinPanel{
+        margin-top: 1vh;
+        width: 90vw;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .carousel img {
         width: calc(100%/2);
     }
 }
+
+@media screen and (max-width: 768px) {
+    #joinPanel h1{
+        font-size: 1.6em;
+    }   
+    #panel1, #panel2{
+        width: 90vw;
+    }
+    #aboutUsPic, #aboutUsText{
+        width: 45vw;
+    }
+
+    h3{
+        font-size: .9em;
+    }
+
+    .wrapper{
+        max-width: 675px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    #joinPanel h1{
+        font-size: 1.1em;
+    }   
+    #panel1, #panel2{
+        width: 90vw;
+    }
+    #aboutUsPic, #aboutUsText{
+        width: 45vw;
+    }
+
+    .desc2{
+        font-size: .6em;
+        
+    }
+    .wrapper{
+        max-width: 300px;
+    }
+
+    h3{
+        font-size: .6em;
+    }
+    #aboutUsTitle {
+        height: 2vh;
+        width: 35vw;
+    }
+}
+
 @media screen and (max-width: 550px) {
     .carousel img {
         width: 100%;

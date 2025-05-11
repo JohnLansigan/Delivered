@@ -73,37 +73,34 @@
             ?>
         </div>
     </div>
-    
-
-
     <div class="desc1">
         <p>
             <h1><center>LET YOUR MESSAGE <br>
-            BE DELIVERED.</center></h1><br><br><br><br> </div>
+            BE DELIVERED.</center></h1><br><br><Br> </div>
 
             <center><div class = "wrapper">
                 <i id="left" class = "fa-solid fa-angle-left"></i>
                 <div class = "carousel">
-                    <img src = "abt1.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "abt2.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "abt3.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "abt4.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "abt1.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "abt2.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "abt3.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "abt4.png" alt = "img" height = "500px" width = "500px">
-                    <img src = "abt1.png" alt = "img" height = "500px" width = "500px">
+                    <img src = "abt1.png" alt = "img" height = "26vw" width = "26vw">
+                    <img src = "abt2.png" alt = "img" height = "26vw" width = "26vw">
+                    <img src = "abt3.png" alt = "img" height = "26vw" width = "26vw">
+                    <img src = "abt4.png" alt = "img" height = "26vw" width = "26vw">
+                    <img src = "abt1.png" alt = "img" height = "26vw" width = "26vw">
+                    <img src = "abt2.png" alt = "img" height = "26vw" width = "26vw">
+                    <img src = "abt3.png" alt = "img" height = "26vw" width = "26vw">
+                    <img src = "abt4.png" alt = "img" height = "26vw" width = "26vw">
+                    <img src = "abt1.png" alt = "img" height = "26vw" width = "26vw">
                 </div>
                 <i id = "right" class = "fa-solid fa-angle-right"></i>
             </div></center>
-            
-            <br><br><div class = "desc2"><h3><center>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</center></h3>
+                 
+            <br><br><div class = "desc2"><h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
         </p>
-    </div><br><br>
+    </div><br>
 
     <div id="panel1">
         <div id="aboutUsPic">
-            <img id='ourPic' src="aboutPic.jpg" alt="img" height = "100%" width = "450px">
+            <img id='ourPic' src="aboutPic.jpg" alt="img" height = "100%" width = "100%">
         </div>
         <div class="aboutUsText">
             <center>
@@ -115,10 +112,9 @@
             </center>
         </div>
     </div>
-    <br>
-    <br>
+
     <div id="panel2">
-        <div class="aboutUsText">
+        <div class="aboutUsText2">
             <center>
                 <div id="aboutUsTitle">
                     <Center><h2>For You</h2></Center>
@@ -129,11 +125,11 @@
             </center>
         </div>
         <div id="aboutUsPic">
-            <img id='ourPic' src="forYouPic.jpg" alt="placeholder.jpg" height = "100%" width = "500px">
+            <img id='ourPic' src="forYouPic.jpg" alt="placeholder.jpg" height = "100%" width = "100%">
         </div>
     </div>
     <br>
-    <br>
+
     <center>
     <div id="joinPanel">
         <div id="joinPanelLogo">
