@@ -1,6 +1,7 @@
 body
 {
     height: 100vh;
+    background-image: url("loginBG2.png");
 }
 
 #login 

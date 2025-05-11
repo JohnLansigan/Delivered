@@ -31,7 +31,7 @@
                 session_name("session_delivered");
                 session_start();
 
-                $servername = "127.0.0.1";
+                $servername = "localhost:3307";
                 $username = "root";
                 $password = "";
                 $dbname = "db_delivered";
@@ -85,7 +85,7 @@
             an account in order to create a submission. You may edit or delete a submission you sent within 24 hours of submission. 
             Otherwise, you cannot edit or delete this message anymore and only view them. It is at the administrators discretion to 
             delete any account or submissions they deem inappropriate. You agree to be bound by the Terms of Use and Privacy Policy 
-            for the Unsent Project and affiliated entities.
+            for the [Delivered] Website and affiliated entities.
             </li><br>
             <li>
             <b>You warrant that you have all necessary licenses and permissions to submit this content and have it posted.</b> You represent and 
@@ -215,12 +215,6 @@
 
 
         <center><a href = "signup.php"><button class = "signupButton">To signup</button></a></center>
-
-
-        <br><br><br>
-
-        <center><b>Contact us: 09123456789</b></center>
-        <center><b>Email us: <a href = "https://gmail.com:">deliveredwebsite@rocketmail.com</a></b></center>
 
         
 
