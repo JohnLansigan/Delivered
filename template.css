@@ -174,7 +174,7 @@ a
     cursor: pointer;
     display: flex; 
     align-items: center;
-    gap: 5px; 
+    gap: 0.31rem; 
     font-size: 1.3vw;
     height: 100%;
     transition: 0.3s;
