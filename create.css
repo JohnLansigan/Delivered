@@ -173,3 +173,13 @@ hr
     background-color: #1b6db9;
     cursor: pointer;
 }
+
+@media screen and (max-width:426px) {
+    #prompt {
+        gap: .3rem;
+    }
+
+    #send {
+        width: 5.2vw;
+    }
+}
