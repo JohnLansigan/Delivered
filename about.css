@@ -79,7 +79,14 @@ h2{
     height: 100%;  
     width: 37.5vw; 
     margin: auto;
-    
+    display: flex;
+    justify-content: center;
+}
+
+#aboutUsPic #ourPic{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 #aboutUsTitle{
@@ -141,6 +148,11 @@ h2{
     top: -4rem;
     left: 0;
     position: absolute;
+}
+
+#joinPic{
+    width: 120px;
+    height: 120px;
 }
 
 .signupButton
@@ -240,12 +252,12 @@ h2{
         max-width: 52vw;
     }
 
-    h3{
-        font-size: 1em;
+    .desc2 h3{
+        font-size: 1.1em;
     }
 
-    #aboutUsPic #ourPic{
-        height: 20vh;
+    h3{
+        font-size: .8em;
     }
 
     #aboutUsTitle{
@@ -276,20 +288,42 @@ h2{
     #panel1, #panel2{
         width: 90vw;
     }
-    #aboutUsPic, #aboutUsText{
-        width: 45vw;
-    }
 
-    h3{
+    .desc2 h3{
         font-size: .9em;
+    }
+    h3{
+        font-size: .6em;
     }
 
     .wrapper{
-        max-width: 44vw;
+        max-width: 65vw;
     }
+
+    .carousel img{
+        height: 31vw;
+    }
+
+    #joinPanel {
+        margin-top: 5%;
+    }
+
 }
 
 @media screen and (max-width: 426px) {
+    #joinPanel{
+        height: 15vh;
+    }
+
+    #joinPanelLogo {
+        top: -2.5rem;
+    }
+
+    #joinPic {
+        width: 90px;
+        height: 90px;
+    }
+    
     #joinPanel h1{
         font-size: 1.1em;
     }   
@@ -300,25 +334,63 @@ h2{
         width: 45vw;
     }
 
-    .desc2{
-        font-size: .6em;
-        
+    .desc2 h3{
+        font-size: .7em;
     }
     .wrapper{
-        max-width: 19.5vw;
+        max-width: 65vw;
+    }
+
+    .carousel img{
+        height: 25vw;
     }
 
     h3{
-        font-size: .6em;
+        font-size: .4em;
     }
     #aboutUsTitle {
-        height: 2vh;
+        height: 6vh;
         width: 35vw;
+    }
+
+    #aboutUsTitle h2{
+        font-size: 1.2em;
     }
 }
 
 @media screen and (max-width: 550px) {
     .carousel img {
-        width: 100%;
+        width: 37%;
     }
+}
+
+@media screen and (max-width: 376px) {
+    #joinPanel h1 {
+        font-size: .9em;
+    }
+    #joinPanel {
+        height: 17vh;
+    }
+    .desc1 h1{
+        font-size: 8vw;
+    }
+
+    .desc2 h3{
+        font-size: .6em;
+    }
+
+    h3 {
+        font-size: .3em;
+    }
+    #aboutUsTitle h2{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    #joinPanel h1{
+        font-size: .7em;
+        
+    }
+
 }
