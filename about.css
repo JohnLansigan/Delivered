@@ -346,7 +346,7 @@ h2{
 
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 431px) {
     #joinPanel{
         height: 15vh;
     }
