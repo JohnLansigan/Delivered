@@ -107,7 +107,7 @@
                 <div id="aboutUsTitle">
                     <Center><h2>About Us</h2></Center>
                 </div>
-            <br>
+          
             <h3>Hello! We are a group of students from the UST College of Information and Computing Sciences. We created this project in partial fulfillment of our requirements for our school. We also wanted to create a freedom wall-like website where users can freely express themselves or lift their feelings by anonymously posting a message to a person they can’t directly send the message to.</h3>
             </center>
         </div>
@@ -119,7 +119,7 @@
                 <div id="aboutUsTitle">
                     <Center><h2>For You</h2></Center>
                 </div>
-                <br>
+
 
             <h3>We hope that through this platform, users will find comfort in knowing they are not alone in their thoughts and emotions. By allowing anonymous posts, we aim to encourage honesty and vulnerability without fear of judgment or exposure. Each message shared on our site reflects real feelings and experiences, creating a space of empathy and understanding. We believe that even in silence, every voice deserves to be heard and every emotion acknowledged.</h3>
             </center>

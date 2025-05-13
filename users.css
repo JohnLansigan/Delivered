@@ -55,6 +55,9 @@ body
             width: 100%;
             border: none;
 
+            justify-content: center;
+            flex-direction: row;
+
             div
             {
                 padding: .2rem;
@@ -138,5 +141,32 @@ body
         border: 2px white solid;
         color: white;
 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #users-container>div div{
+        gap: .2rem;
+    }
+}
+
+@media screen and (max-width: 441px) {
+    #users-container > div div{
+        flex-direction: column;
+    }
+    #users-container .user{
+        width: 90%;
+    }
+    #users-container .count {
+        width: 90%
+    }
+}
+
+@media screen and (max-width: 376px) {
+    #users-container .user{
+        width: 88%;
+    }
+    #users-container .count {
+        width: 88%
     }
 }

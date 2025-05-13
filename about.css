@@ -263,11 +263,7 @@ h2{
     #aboutUsTitle{
         height: 4vh;
         width: 25vw;
-    }
-
-    .desc2, #panel1, #panel2{
-        margin-bottom: 5%;
-
+        margin-bottom: 3vh;
     }
 
     #joinPanel{
@@ -298,6 +294,7 @@ h2{
     #panel1
     {
         flex-direction: column;
+        margin-bottom: 0%;
     }
 
     #panel2
@@ -417,7 +414,7 @@ h2{
     }
 
     .desc2 h3{
-        font-size: .7em;
+        font-size: .9em;
     }
 
     h3 {
@@ -426,15 +423,22 @@ h2{
     #aboutUsTitle h2{
         font-size: 1em;
     }
+    #aboutUsTitle{
+        margin-bottom:0vh;
+    }
     #joinPanel h1{
     margin-top: 5%;
     }
+
 }
 
 @media screen and (max-width: 321px) {
     #joinPanel h1{
         font-size: .7em;
-        
+    }
+
+    #panel1 h3, #panel2 h3{
+        font-size: .6em;
     }
 
 }
