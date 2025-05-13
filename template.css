@@ -98,7 +98,7 @@ body
     }
     #login
     {
-        margin-right: 6vw;
+        margin-right: 7vw;
     }
     #login img
     {
@@ -129,6 +129,14 @@ body
 
     
 }
+
+@media (max-width: 570px) 
+{
+    #login
+    {
+        margin-right: 7vw;
+    }
+}
 @media (max-width: 375px) 
 {
     #home, #about, #terms, #create, #login, #dashboard, #users, #allMessages
@@ -138,7 +146,7 @@ body
     }
     #login
     {
-        margin-right: 5.5vw;
+        margin-right: 7vw;
     }
 }
 
