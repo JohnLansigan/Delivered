@@ -32,7 +32,7 @@
                 session_name("session_delivered");
                 session_start();
 
-                $servername = "127.0.0.1";
+                $servername = "localhost:3306";
                 $username = "root";
                 $password = "";
                 $dbname = "db_delivered";
@@ -76,7 +76,7 @@
     <div class="desc1">
         <p>
             <h1><center>LET YOUR MESSAGE <br>
-            BE DELIVERED.</center></h1><br> </div>
+            BE DELIVERED.</center></h1><br><br><Br> </div>
 
             <center><div class = "wrapper">
                 <i id="left" class = "fa-solid fa-angle-left"></i>
@@ -92,22 +92,22 @@
                     <img src = "abt1.png" alt = "img" height = "26vw" width = "26vw">
                 </div>
                 <i id = "right" class = "fa-solid fa-angle-right"></i>
-            </div></center> <br>
+            </div></center>
                  
-            <div class = "desc2"><h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
+            <br><br><div class = "desc2"><h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
         </p>
     </div><br>
 
     <div id="panel1">
         <div id="aboutUsPic">
-            <img id='ourPic' src="aboutPic.jpg" alt="img">
+            <img id='ourPic' src="aboutPic.jpg" alt="img" height = "100%" width = "100%">
         </div>
         <div class="aboutUsText">
             <center>
                 <div id="aboutUsTitle">
                     <Center><h2>About Us</h2></Center>
                 </div>
-            <br>
+          
             <h3>Hello! We are a group of students from the UST College of Information and Computing Sciences. We created this project in partial fulfillment of our requirements for our school. We also wanted to create a freedom wall-like website where users can freely express themselves or lift their feelings by anonymously posting a message to a person they can’t directly send the message to.</h3>
             </center>
         </div>
@@ -119,13 +119,13 @@
                 <div id="aboutUsTitle">
                     <Center><h2>For You</h2></Center>
                 </div>
-                <br>
+
 
             <h3>We hope that through this platform, users will find comfort in knowing they are not alone in their thoughts and emotions. By allowing anonymous posts, we aim to encourage honesty and vulnerability without fear of judgment or exposure. Each message shared on our site reflects real feelings and experiences, creating a space of empathy and understanding. We believe that even in silence, every voice deserves to be heard and every emotion acknowledged.</h3>
             </center>
         </div>
         <div id="aboutUsPic">
-            <img id='ourPic' src="forYouPic.jpg" alt="placeholder.jpg">
+            <img id='ourPic' src="forYouPic.jpg" alt="placeholder.jpg" height = "100%" width = "100%">
         </div>
     </div>
     <br>
@@ -133,13 +133,10 @@
     <center>
     <div id="joinPanel">
         <div id="joinPanelLogo">
-            <img id='joinPic' src="favicon.png" alt="placeholder.jpg">
+            <img id='ourPic' src="favicon.png" alt="placeholder.jpg" height = "120px" width = "120px">
         </div>
-        <div id="joinPanelText">
-            <h1>Join us in a space where anonymous words<br>are delivered with meaning.</h1>
+        <h1>Join us in a space where anonymous words<br>are delivered with meaning.</h1>
         <br>
-        </div>
-        
         <center>
             <a href = "signup.php"><button class = "signupButton">To signup</button></a>
         </center>
@@ -161,12 +158,13 @@
         </div>
 
         <div>
-
+               
             <h3>Links</h3>
             <a href="index.php">Home</a>
             <a href="about.php">About</a>
             <a href="terms.php">Terms</a>
             <a href="create.php">Create</a>
+           
 
         </div>
 

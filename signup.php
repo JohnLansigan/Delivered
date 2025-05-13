@@ -101,7 +101,7 @@
 
         <div>
             <input type="checkbox" id="accept" name="accept" required onchange="validateAccept()">
-            <label for="accept">By signing up you agree to our <a href="terms.php" onclick="showTerms(event)">Terms and conditions</a></label>
+            <label for="accept" id="bySi">By signing up you agree to our <a href="terms.php" onclick="showTerms(event)">Terms and conditions</a></label>
             <div id="accept-error" class="error-message"></div>
         </div>
 

@@ -22,7 +22,7 @@ body
     padding: 1rem;
     border-radius: 1rem;
     overflow-y: auto;
-    max-height: 60vh;
+    max-height: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
     &::-webkit-scrollbar {
@@ -189,5 +189,24 @@ body
         border: 2px white solid;
         color: white;
 
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #messages-container > .message-container > div {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: stretch;
+    }
+
+    .expand, .delete {
+        width: 100%; /* Full width on small screens */
+        font-size: small;
+        padding: 0.5rem;
+    }
+
+    .user, .date, .normal, .yellow, .orange, .red {
+        font-size: small;
+        padding: 0.5rem;
+        box-sizing: border-box;
     }
 }

@@ -1,6 +1,6 @@
 body
 {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("loginBG2.png");
 }
 
@@ -100,3 +100,8 @@ a {
     color: #2791f5;
 }
 
+@media screen and (max-width: 500px){
+    #form-container {
+        width: 60%;
+    }
+}

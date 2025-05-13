@@ -132,3 +132,34 @@ body.swal2-shown {
     overflow: hidden !important;
     padding-right: 0 !important; /* To prevent a jump from scrollbar disappearing */
 }
+
+@media screen and (max-width: 899px) {
+    #form-container #fname, #form-container #lname{
+        width: 46%;
+    }
+    #bySi
+    {
+        font-size: 0.8em;
+    }
+}
+@media screen and (max-width: 769px)
+{
+    #bySi
+    {
+        font-size: 0.6em;
+    }
+} 
+
+@media screen and (max-width: 500px) {
+    #form-container {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 370px)
+{
+    #bySi
+    {
+        font-size: 0.5em;
+    }
+} 
+
