@@ -130,23 +130,24 @@
     </div>
     <br>
 
-    <center>
-    <div id="joinPanel">
-        <div id="joinPanelLogo">
-            <img id='joinPic' src="favicon.png" alt="placeholder.jpg">
+    <div class="white-container">
+
+        <div id="joinPanel">
+            <Center>
+
+            
+            <div id="joinPanelText">
+                <h1>Join us in a space where anonymous words<br>are delivered with meaning.</h1>
+            
+            </div>
+            </Center>
+            <center>
+                <a href = "signup.php"><button class = "signupButton">To signup</button></a>
+            </center>
         </div>
-        <div id="joinPanelText">
-            <h1>Join us in a space where anonymous words<br>are delivered with meaning.</h1>
-        <br>
-        </div>
-        
-        <center>
-            <a href = "signup.php"><button class = "signupButton">To signup</button></a>
-        </center>
+
     </div>
-    </center>
-    
-    <br><br><br><br><br>
+
     
     <div id='footer-container'>
 
