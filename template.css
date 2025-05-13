@@ -13,14 +13,14 @@ body
     gap: 1rem;
     &::-webkit-scrollbar {
         display: none;
-      }
+    }
 }
 
 #nav-container
 {
     z-index: 1000;
     height: 5vh;
-    width: auto;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,33 +29,34 @@ body
     top: 0;
 }
 
-#nav-container > a:first-child, #logo
-{
-    height: auto;
-    display: flex;
-    align-items: center;
-}
 
 #middle-nav
 {
     height: 100%;
+    width: 83vw;
+    display: flex;
+    justify-content: center;
+}
+
+#nav-container:first-child a
+{
     display: flex;
     align-items: center;
 }
 
-
 #logo
 {
     height: auto;
-    width: 6vw;
-    margin: 0 10px 0 10px;
+    width: 7vw;
+    margin: 0 0.5vw 0 0.5vw;
+
 }
 
 #home, #about, #terms, #create, #login, #dashboard, #users, #allMessages
 {
     height: 100%;
-    width: 7vw;
-    font-size: 1.3vw;
+    width: 8vw;
+    font-size: 1rem;
     background-color: black;
     color: white;
     border: none;
@@ -72,7 +73,7 @@ body
 
 #login
 {
-    width: 8vw;
+    width: 10vw;
     text-decoration: none;
 }
 
@@ -187,4 +188,18 @@ a
 .dropdown-button img {
 height: 2.3vh; 
 width: auto;  
+}
+
+@media screen and (max-width: 431px){
+    
+    #home, #about, #terms, #create, #login, #dashboard, #users, #allMessages
+    {
+        width: 15vw;
+    }
+
+    #middle-nav
+    {
+        width: 60vw;
+    }
+
 }
