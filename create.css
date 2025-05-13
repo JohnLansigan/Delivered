@@ -188,8 +188,7 @@ hr
 @media (max-width: 480px) {
     #top-container
     {
-        h1
-        {
+        h1 {
             font-size: 1.5rem;
         }
 
@@ -295,5 +294,15 @@ hr
         width: 8vw;
         font-size: 2rem;
         padding-bottom: 2%;
+    }
+}
+
+@media screen and (max-width:426px) {
+    #prompt {
+        gap: .3rem;
+    }
+
+    #send {
+        width: 5.2vw;
     }
 }
