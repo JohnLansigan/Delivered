@@ -1,5 +1,5 @@
-*
-{
+*{
+
     margin: 0;
     font-family: Glacial Indifference;
 }
@@ -14,13 +14,16 @@ body
     &::-webkit-scrollbar {
         display: none;
       }
+      overflow-x: hidden;
 }
 
 #nav-container
 {
     z-index: 1000;
     height: 5vh;
-    width: auto;
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,6 +70,75 @@ body
     img
     {
         height: 60%;
+    }
+}
+
+@media (max-width: 768px) 
+{
+    #home, #about, #terms, #create, #login, #dashboard, #users, #allMessages
+    {
+        font-size: 1em;
+        width: 10vw;
+    }
+    #login
+    {
+        margin-right: 4vw;
+    }
+    #login img
+    {
+        margin-right: 1vw;
+    }
+}
+@media (max-width: 425px) 
+{
+    #home, #about, #terms, #create, #login, #dashboard, #users, #allMessages
+    {
+        font-size: 0.7em;
+        width: 10vw;
+    }
+    #login
+    {
+        margin-right: 6vw;
+    }
+    #login img
+    {
+        margin-right: 1vw;
+    }
+    #footer-container
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    #footer-container div
+    {
+        margin-top: 5%;
+    }
+
+    #footer-container p,h2, h3, a
+    {
+        align-self: center;
+    }
+
+    #footer-container h3
+    {
+        font-size: 100%;
+    }
+
+    
+}
+@media (max-width: 375px) 
+{
+    #home, #about, #terms, #create, #login, #dashboard, #users, #allMessages
+    {
+        font-size: 2.3vw;
+        width: 12vw;
+    }
+    #login
+    {
+        margin-right: 5.5vw;
     }
 }
 

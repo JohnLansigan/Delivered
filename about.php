@@ -32,7 +32,7 @@
                 session_name("session_delivered");
                 session_start();
 
-                $servername = "127.0.0.1";
+                $servername = "localhost:3306";
                 $username = "root";
                 $password = "";
                 $dbname = "db_delivered";
@@ -76,7 +76,7 @@
     <div class="desc1">
         <p>
             <h1><center>LET YOUR MESSAGE <br>
-            BE DELIVERED.</center></h1><br> </div>
+            BE DELIVERED.</center></h1><br><br><Br> </div>
 
             <center><div class = "wrapper">
                 <i id="left" class = "fa-solid fa-angle-left"></i>
@@ -92,15 +92,15 @@
                     <img src = "abt1.png" alt = "img" height = "26vw" width = "26vw">
                 </div>
                 <i id = "right" class = "fa-solid fa-angle-right"></i>
-            </div></center> <br>
+            </div></center>
                  
-            <div class = "desc2"><h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
+            <br><br><div class = "desc2"><h3>A messaging website addressed to those we can’t, or choose not to, communicate directly. Here, you can anonymously post a message dedicated to a person and be part of our growing community by browsing through the submissions and discover the common threads that weave through our experiences of love, loss, hope, and the myriad of feelings that often remain trapped within. Who knows? The messages you are reading could be about you!</h3>
         </p>
     </div><br>
 
     <div id="panel1">
         <div id="aboutUsPic">
-            <img id='ourPic' src="aboutPic.jpg" alt="img">
+            <img id='ourPic' src="aboutPic.jpg" alt="img" height = "100%" width = "100%">
         </div>
         <div class="aboutUsText">
             <center>
@@ -125,29 +125,25 @@
             </center>
         </div>
         <div id="aboutUsPic">
-            <img id='ourPic' src="forYouPic.jpg" alt="placeholder.jpg">
+            <img id='ourPic' src="forYouPic.jpg" alt="placeholder.jpg" height = "100%" width = "100%">
         </div>
     </div>
     <br>
 
-    <div class="white-container">
-
-        <div id="joinPanel">
-            <Center>
-
-            
-            <div id="joinPanelText">
-                <h1>Join us in a space where anonymous words<br>are delivered with meaning.</h1>
-            
-            </div>
-            </Center>
-            <center>
-                <a href = "signup.php"><button class = "signupButton">To signup</button></a>
-            </center>
+    <center>
+    <div id="joinPanel">
+        <div id="joinPanelLogo">
+            <img id='ourPic' src="favicon.png" alt="placeholder.jpg" height = "120px" width = "120px">
         </div>
-
+        <h1>Join us in a space where anonymous words<br>are delivered with meaning.</h1>
+        <br>
+        <center>
+            <a href = "signup.php"><button class = "signupButton">To signup</button></a>
+        </center>
     </div>
-
+    </center>
+    
+    <br><br><br><br><br>
     
     <div id='footer-container'>
 
@@ -162,12 +158,13 @@
         </div>
 
         <div>
-
+               
             <h3>Links</h3>
             <a href="index.php">Home</a>
             <a href="about.php">About</a>
             <a href="terms.php">Terms</a>
             <a href="create.php">Create</a>
+           
 
         </div>
 
