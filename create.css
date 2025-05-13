@@ -30,8 +30,14 @@ body
     border-radius: 15px 15px 0 0;
     padding: 1%;
 
+    h1
+    {
+        font-size: 2rem;
+    }
+
     a, button
     {
+        font-size: 1.5rem;
         height: auto;
         display: flex;
         align-items: center;
@@ -70,6 +76,7 @@ body
 h2
 {
     font-weight: normal;
+    font-size: 2rem;
 }
 
 #recipient
@@ -79,6 +86,7 @@ h2
     font-size: x-large;
     outline: none;
     width: 100%;
+    font-size: 2rem;
 }
 
 #reply-container
@@ -93,7 +101,7 @@ h2
         background-color: #63636b;
         color: white;
         white-space: pre-wrap;
-        font-size: large;
+        font-size: 1.25rem;
         border-radius: 15px 15px 15px 0;
         display: inline-block;
         width: max-content;
@@ -110,6 +118,7 @@ h2
     h2
     {
         color: #63636b;
+        font-size: 2rem;
     }
 }
 
@@ -129,7 +138,7 @@ hr
     outline: none;
     max-width: 60%;
     color: white;
-    font-size: large;
+    font-size: 1.25rem;
 }
 
 #delivered
@@ -148,10 +157,10 @@ hr
     width: 100%;
     border: 1px #63636b solid;
     padding: .5%;
-    font-size: large;
+    font-size: 1.5rem;
     border-radius: 1000px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     gap: 1rem;
 }
@@ -163,7 +172,7 @@ hr
     border-radius: 100px;
     height: 5.2vh;
     width: 2.6vw;
-    font-size: large;
+    font-size: 1.5rem;
     color: white;
     transition: 0.3s;
 }
@@ -172,4 +181,119 @@ hr
 {
     background-color: #1b6db9;
     cursor: pointer;
+}
+
+/* Media Queries */
+/* Phone Screens */
+@media (max-width: 480px) {
+    #top-container
+    {
+        h1
+        {
+            font-size: 1.5rem;
+        }
+
+        a, button
+        {
+            font-size: 1rem;
+        }
+
+    }
+    #recipient-container{
+        h2
+        {
+            font-size: 1rem;
+        }
+
+        #recipient
+        {
+            font-size: 1rem;
+        }
+    }
+
+    #reply-container
+    {
+        div
+        {
+            padding: 3%;
+            font-size: 1rem;
+        }
+    }   
+    #message-container
+    {
+        #message{
+        padding: 3%;
+        font-size: 1rem;
+        }
+        h2{
+        font-size: 1rem;
+        }
+    }
+    #prompt
+    {
+        font-size: 1rem;
+    }
+    #send
+    {
+        height: auto;
+        width: 10vw;
+        font-size: 1rem;
+        padding-bottom: 2%;
+    }
+}
+/* Tablet or Ipad Screens */
+@media (min-width:768px) and (max-width:1024px){
+    #top-container
+    {
+        h1
+        {
+            font-size: 2.5rem;
+        }
+
+        a, button
+        {
+            font-size: 2rem;
+        }
+
+    }
+    #recipient-container{
+        h2
+        {
+            font-size: 2rem;
+        }
+
+        #recipient
+        {
+            font-size: 2rem;
+        }
+    }
+    #reply-container
+    {
+        div
+        {
+            padding: 2%;
+            font-size: 2rem;
+        }
+    }   
+    #message-container
+    {
+        #message{
+        padding: 2%;
+        font-size: 2rem;
+        }
+        h2{
+        font-size: 2rem;
+        }
+    }
+    #prompt
+    {
+        font-size: 2rem;
+    }
+    #send
+    {
+        height: auto;
+        width: 8vw;
+        font-size: 2rem;
+        padding-bottom: 2%;
+    }
 }
