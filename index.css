@@ -254,6 +254,12 @@ body
     }
 }
 
+@media screen and (max-width: 521px) {
+    #ad-container{
+        width: 90%;
+    }
+}
+
 @media screen and (max-width: 426px) {
 
     
